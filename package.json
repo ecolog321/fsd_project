@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ecolog321/fsd_project#readme",
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^24.0.3",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -28,6 +29,7 @@
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.1",
     "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.89.2",
