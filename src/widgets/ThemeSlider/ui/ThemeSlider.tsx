@@ -11,16 +11,16 @@ interface ThemeSliderProps {
 }
 
 const ThemeSlider: FC<ThemeSliderProps> = ({ className }) => {
-  const { toggleTheme, theme } = useTheme();
-  return (
-    <Button
-      theme={ThemeButton.CLEAR}
-      className={classNames(cls.themeSlider, {}, [className])}
-      onClick={toggleTheme}
-    >
-      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-    </Button>
-  );
+    const { toggleTheme, theme } = useTheme();
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            className={classNames(cls.themeSlider, {}, [className])}
+            onClick={toggleTheme}
+        >
+            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+        </Button>
+    );
 };
 
 export default ThemeSlider;
