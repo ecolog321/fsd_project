@@ -8,7 +8,6 @@ interface SidebarProps {
 }
 
 const Sidebar: FC<SidebarProps> = (props) => {
-
     const { className } = props;
     const [collasped, setCollapsed] = useState(false);
 
@@ -18,13 +17,13 @@ const Sidebar: FC<SidebarProps> = (props) => {
 
     return (
         <div
-            className={classNames(cls.sidebar, { [cls.collapsed]: collasped }, [
+            className={classNames(cls.sidebar, { [cls.collapsed]: collasped}, [
                 className,
             ])}
         >
             <button onClick={onToggle}>toggle</button>
             <div className={cls.switchers}>
-                <ThemeSlider/>
+                <ThemeSlider />
             </div>
         </div>
     );
