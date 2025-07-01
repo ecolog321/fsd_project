@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { classNames } from "shared/lib/helpers/classNames/classNames";
 import cls from "./Sidebar.module.scss";
 import { ThemeSlider } from "widgets/ThemeSlider";
+import { useTranslation } from "react-i18next";
 
 interface SidebarProps {
   className?: string;
@@ -15,6 +16,12 @@ const Sidebar: FC<SidebarProps> = (props) => {
         setCollapsed((prev) => !prev);
     };
 
+     const { t, i18n } = useTranslation();
+      
+        const toogle = () => {
+            i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+        };
+
     return (
         <div
             className={classNames(cls.sidebar, { [cls.collapsed]: collasped}, [
@@ -24,6 +31,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
             <button onClick={onToggle}>toggle</button>
             <div className={cls.switchers}>
                 <ThemeSlider />
+                 <button onClick={toogle}>{t("Перевести")}</button>
             </div>
         </div>
     );
