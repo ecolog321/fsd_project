@@ -3,7 +3,7 @@ import cls from "./ThemeSlider.module.scss";
 import { classNames } from "shared/lib/helpers/classNames/classNames";
 import DarkIcon from "../assets/DarkIcon.svg";
 import LightIcon from "../assets/LightIcon.svg";
-import { Theme, useTheme } from "app/provider/ThemeProvider";
+import { Theme, useTheme } from "app/providers/ThemeProvider";
 import Button, { ThemeButton } from "shared/ui/Button/Button";
 
 interface ThemeSliderProps {
