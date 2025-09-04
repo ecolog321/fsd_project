@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/helpers/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./NotFoundPage.module.scss";
 import { FC } from "react";
 

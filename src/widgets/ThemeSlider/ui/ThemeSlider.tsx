@@ -1,6 +1,6 @@
 import { FC } from "react";
 import cls from "./ThemeSlider.module.scss";
-import { classNames } from "shared/lib/helpers/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import DarkIcon from "../assets/DarkIcon.svg";
 import LightIcon from "../assets/LightIcon.svg";
 import { Theme, useTheme } from "app/providers/ThemeProvider";
