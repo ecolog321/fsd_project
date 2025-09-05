@@ -12,7 +12,8 @@
     "lint:ts": "eslint --fix",
     "lint:scss": "stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/.storybook",
-    "build-storybook": "storybook build -c ./config/.storybook"
+    "build-storybook": "storybook build -c ./config/.storybook",
+    "chromatic": "npx chromatic --project-token=chpt_ed4532c1c0e0e7f"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@jest/globals": "^30.0.3",
     "@storybook/addon-docs": "^9.1.4",
     "@storybook/addon-onboarding": "^9.1.4",
+    "@storybook/addon-viewport": "^9.0.8",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.1",
     "@storybook/react-webpack5": "^9.1.4",
     "@svgr/webpack": "^8.1.0",
@@ -43,6 +45,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.1",
+    "chromatic": "^13.1.4",
     "css-loader": "^7.1.2",
     "eslint": "^9.30.0",
     "eslint-plugin-react": "^7.37.5",
