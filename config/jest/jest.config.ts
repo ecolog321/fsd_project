@@ -42,7 +42,7 @@ const config: Config = {
     setupFilesAfterEnv:['<rootDir>/config/jest/setupTest.ts'],
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponents.tsx'),
+        '\\.svg': '<rootDir>/config/jest/jestEmptyComponents.tsx',
     },
     testMatch: [
         "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
