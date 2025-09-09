@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
 import Button from "shared/ui/Button/Button";
-import cls from "./ButButton.module.scss";
 
 interface ButButtonPropsProps {
   className?: string;
@@ -20,7 +18,6 @@ function BugButton({ className }: ButButtonPropsProps) {
 
     return (
         <Button
-            className={classNames(cls.ButButton, {}, [className])}
             onClick={onThrow}
         >
             throw error
