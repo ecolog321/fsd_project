@@ -8,24 +8,24 @@ interface ButButtonPropsProps {
 }
 
 function BugButton({ className }: ButButtonPropsProps) {
-  const [error, setError] = useState(false);
+    const [error, setError] = useState(false);
 
-  const onThrow = () => setError(true);
+    const onThrow = () => setError(true);
 
-  useEffect(() => {
-    if (error) {
-      throw new Error();
-    }
-  }, [error]);
+    useEffect(() => {
+        if (error) {
+            throw new Error();
+        }
+    }, [error]);
 
-  return (
-    <Button
-      className={classNames(cls.ButButton, {}, [className])}
-      onClick={onThrow}
-    >
-      throw error
-    </Button>
-  );
+    return (
+        <Button
+            className={classNames(cls.ButButton, {}, [className])}
+            onClick={onThrow}
+        >
+            throw error
+        </Button>
+    );
 }
 
 export default BugButton;

@@ -18,6 +18,7 @@ export default defineConfig([
             "react/jsx-uses-vars": "error",
             "react/jsx-indent":[2, 4],
             "no-unused-vars":"warn",
+            "react/display-name": "warn",
             "@typescript-eslint/no-unused-vars": "warn"
 
         }
