@@ -4,7 +4,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import DarkIcon from "../assets/DarkIcon.svg";
 import LightIcon from "../assets/LightIcon.svg";
 import { Theme, useTheme } from "app/providers/ThemeProvider";
-import Button, { ThemeButton } from "shared/ui/Button/Button";
+import Button, { ButtonTheme } from "shared/ui/Button/Button";
 
 interface ThemeSliderProps {
   className?: string;
@@ -14,7 +14,7 @@ const ThemeSlider: FC<ThemeSliderProps> = ({ className }) => {
     const { toggleTheme, theme } = useTheme();
     return (
         <Button
-            theme={ThemeButton.CLEAR}
+            theme={ButtonTheme.CLEAR}
             className={classNames(cls.themeSlider, {}, [className])}
             onClick={toggleTheme}
         >
