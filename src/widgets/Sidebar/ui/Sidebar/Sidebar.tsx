@@ -22,13 +22,13 @@ const Sidebar: FC<SidebarProps> = (props) => {
   };
 
   return (
-    <div
+      <div
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collasped }, [
         className,
       ])}
     >
-      <Button
+          <Button
         data-testid="sidebar-toogle"
         onClick={onToggle}
         theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -36,32 +36,32 @@ const Sidebar: FC<SidebarProps> = (props) => {
         square
         size={ButtonSize.XL}
       >
-        {collasped ? ">" : "<"}
-      </Button>
-      <div className={cls.items}>
-        <AppLink
+              {collasped ? ">" : "<"}
+          </Button>
+          <div className={cls.items}>
+              <AppLink
           theme={AppLinkTheme.PRIMARY}
           className={cls.item}
           to={RouterPath.main}
         >
-          <MainIcon className={cls.icon}></MainIcon>
-          <span className={cls.link}> Главная</span>
-        </AppLink>
+                  <MainIcon className={cls.icon}></MainIcon>
+                  <span className={cls.link}> Главная</span>
+              </AppLink>
 
-        <AppLink
+              <AppLink
           theme={AppLinkTheme.PRIMARY}
           className={cls.item}
           to={RouterPath.about}
         >
-          <AboutIcon className={cls.icon}></AboutIcon>
-          <span className={cls.link}> О стайте</span>
-        </AppLink>
+                  <AboutIcon className={cls.icon}></AboutIcon>
+                  <span className={cls.link}> О стайте</span>
+              </AppLink>
+          </div>
+          <div className={cls.switchers}>
+              <ThemeSlider />
+              <LangSwitcher short={collasped} className={cls.lang} />
+          </div>
       </div>
-      <div className={cls.switchers}>
-        <ThemeSlider />
-        <LangSwitcher short={collasped} className={cls.lang} />
-      </div>
-    </div>
   );
 };
 

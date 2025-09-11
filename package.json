@@ -27,7 +27,7 @@
   "homepage": "https://github.com/ecolog321/fsd_project#readme",
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
-    "@eslint/js": "^9.30.0",
+    "@eslint/js": "^9.35.0",
     "@jest/globals": "^30.0.3",
     "@storybook/addon-docs": "^9.1.4",
     "@storybook/addon-onboarding": "^9.1.4",
@@ -46,8 +46,9 @@
     "@types/webpack-dev-server": "^4.7.1",
     "chromatic": "^13.1.4",
     "css-loader": "^7.1.2",
-    "eslint": "^9.30.0",
+    "eslint": "^9.35.0",
     "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "^9.1.4",
     "file-loader": "^6.2.0",
     "globals": "^16.2.0",
@@ -67,8 +68,8 @@
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.35.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
@@ -83,8 +84,6 @@
     "react-router-dom": "^6.2.1"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "extends": ["eslint:recommended"]
   }
 }

@@ -9,14 +9,14 @@ interface componentRednderOptions {
 }
 
 export function componentRender(
-  component: ReactNode,
-  options: componentRednderOptions = {}
+    component: ReactNode,
+    options: componentRednderOptions = {}
 ) {
-  const { route='/' } = options;
+    const { route='/' } = options;
 
-  return render(
-    <MemoryRouter initialEntries={[route]}>
-      <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
-    </MemoryRouter>
-  );
+    return render(
+        <MemoryRouter initialEntries={[route]}>
+            <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
+        </MemoryRouter>
+    );
 }
