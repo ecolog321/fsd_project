@@ -1,1 +1,1 @@
-learning project
+Project with FSD arhitecture
