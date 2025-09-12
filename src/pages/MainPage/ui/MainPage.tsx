@@ -1,5 +1,9 @@
+import { Counter } from "entities/Counter";
+
 const MainPage = () => {
-  return <div>MAINPAGE</div>;
+  return <div>MAINPAGE
+      <Counter></Counter>
+  </div>;
 };
 
 export default MainPage;

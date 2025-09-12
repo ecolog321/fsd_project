@@ -4,7 +4,6 @@
  */
 
 import type { Config } from 'jest';
-import path from 'path';
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -17,6 +16,9 @@ const config: Config = {
     // cacheDirectory: "C:\\Users\\ecark\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances, contexts and results before every test
+    globals:{
+        '__IS_DEV__':true,
+    },
     clearMocks: true,
     modulePaths: ['<rootDir>src/'],
     testEnvironment: "jsdom",
