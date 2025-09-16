@@ -1,0 +1,14 @@
+.inputWrapper {
+    background: #dddddd;
+}
+.input {
+   margin-right: 5px; 
+   background: transparent;
+   border: none;
+   outline: none;
+   width: 100%;
+
+   &:focus {
+    outline: none;
+   }
+}
