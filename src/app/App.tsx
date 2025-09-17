@@ -5,7 +5,9 @@ import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { useTheme } from "./providers/ThemeProvider";
 import { Sidebar } from "widgets/Sidebar";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { userActions } from "entities/User";
 
 
 
@@ -13,6 +15,11 @@ import { Suspense } from "react";
 export const App = () => {
     
     const { theme } = useTheme();
+    const dispatch=useDispatch();
+
+    useEffect(()=>{
+        dispatch(userActions.initAuthData())
+    }, [dispatch])
    
 
     return (
