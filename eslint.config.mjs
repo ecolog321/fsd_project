@@ -19,7 +19,7 @@ export default defineConfig([
             "react-hooks":reactHooks,
         },
         rules:{
-            "indent": "on",
+            "indent": "off",
             "react/react-in-jsx-scope": "off",
             "react/jsx-uses-react": "error",
             "react/jsx-uses-vars": "error",

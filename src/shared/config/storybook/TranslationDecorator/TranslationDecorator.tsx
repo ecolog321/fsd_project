@@ -6,10 +6,10 @@ import { Suspense } from "react";
 
 export const TranslationDecorator = (StoryComponent: StoryFn) => {
   return (
-    <I18nextProvider i18n={i18n}>
-      <Suspense fallback="">
-        <StoryComponent />
-      </Suspense>
-    </I18nextProvider>
+      <I18nextProvider i18n={i18n}>
+          <Suspense fallback="">
+              <StoryComponent />
+          </Suspense>
+      </I18nextProvider>
   );
 };

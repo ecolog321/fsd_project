@@ -27,29 +27,29 @@ const Navbar = ({ className }: NavbarProps) => {
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
-  }, []);
+  }, [dispatch]);
 
 
   if (authData) {
     return (
-      <div className={classNames(cls.navbar, {}, [className])}>
-        <div className={cls.links}>
-          <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>
-            {t("Выйти")}
-          </Button>
+        <div className={classNames(cls.navbar, {}, [className])}>
+            <div className={cls.links}>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>
+                    {t("Выйти")}
+                </Button>
+            </div>
         </div>
-      </div>
     );
   }
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
-          {t("Войти")}
-        </Button>
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      <div className={classNames(cls.navbar, {}, [className])}>
+          <div className={cls.links}>
+              <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
+                  {t("Войти")}
+              </Button>
+              {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
+          </div>
       </div>
-    </div>
   );
 };
 
