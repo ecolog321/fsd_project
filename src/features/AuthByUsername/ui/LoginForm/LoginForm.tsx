@@ -3,15 +3,14 @@ import cls from "./LoginForm.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import Input from "shared/ui/Input/Input";
-import { useDispatch, useSelector, useStore } from "react-redux";
-import { memo, useCallback, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { memo, useCallback } from "react";
 import {
   loginActions,
   loginReducer,
 } from "features/AuthByUsername/model/slice/loginSlice";
 import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername";
 import Text, { TextTheme } from "shared/ui/Text/Text";
-import { ReduxStoreWithManager } from "app/providers/StoreProvider";
 import { getLoginUsername } from "features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginLoading } from "features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading";
@@ -31,7 +30,6 @@ const initialReducers: ReducersList = {
 const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const store = useStore() as ReduxStoreWithManager;
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginLoading);
