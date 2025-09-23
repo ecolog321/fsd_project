@@ -14,7 +14,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
       onClose={onClose}
       lazy
       >
-          <LoginFormAsync/>
+          <LoginFormAsync onSuccess={onClose}/>
       </Modal>
   )
 };

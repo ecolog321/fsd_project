@@ -20,7 +20,10 @@ type Story = StoryObj<typeof ComponentMeta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-    args: {},
+    args: {
+        className:'123',
+        onSuccess:()=>'',
+    },
     decorators:[
         StoreDecorator({
             loginForm:{username:'123', password:'000'}

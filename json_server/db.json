@@ -25,5 +25,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname":"Dima",
+    "lastname":"Arkhipov",
+    "age":"29",
+    "currency":"RUB",
+    "country":"Russia",
+    "username":"Ormina",
+    "avatar":"https://i.pinimg.com/736x/ff/1b/bf/ff1bbffc7465d6799b47f1686a424d86.jpg"
+  }
 }
