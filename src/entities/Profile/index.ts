@@ -1,8 +1,9 @@
-export {
-    Profile,
-    ProfileSchema
-} from './modal/types/profile'
+import ProfileCard from "./ui/ProfileCard/ProfileCard";
 
-export {
-profileActions,profileReducers
-} from './modal/slice/profileSlice'
+export { Profile, ProfileSchema } from "./modal/types/profile";
+
+export { profileActions, profileReducers } from "./modal/slice/profileSlice";
+
+export { fetchProfileData } from "./modal/services/fetchUserProfileData/fetchUserProfileData";
+
+export {ProfileCard}

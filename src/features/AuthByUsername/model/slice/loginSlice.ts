@@ -10,7 +10,7 @@ const initialState: LoginSchema = {
 
 export const loginSlice = createSlice({
   name: "login",
-  initialState: initialState,
+  initialState,
   reducers: {
     setUserName: (state, action: PayloadAction<string>) => {
       state.username = action.payload;
@@ -29,7 +29,7 @@ export const loginSlice = createSlice({
     });
     builder.addCase(loginByUsername.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.error = action.payload as string;
     });
   },
 });

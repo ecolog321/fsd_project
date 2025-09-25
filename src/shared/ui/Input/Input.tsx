@@ -20,7 +20,7 @@ const Input = memo((props: InputProps) => {
   const { className, value, placeholder, onChange, type = "text", autoFocus, ...otherProps} = props;
 
 
-  const ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement | null>(null);
   const [isFocused, setIsFocused]= useState(false)
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,7 @@ const Input = memo((props: InputProps) => {
   useEffect(()=>{
     if (autoFocus) {
         setIsFocused(true)
-        ref.current.focus();
+        ref?.current?.focus();
     }
   },[autoFocus])
   return (

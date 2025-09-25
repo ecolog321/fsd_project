@@ -1,16 +1,16 @@
 import { StoryFn } from "@storybook/react-webpack5";
 import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
-const defualtReducers :DeepPartial<ReducersMapObject<StateSchema>> = {
+const defualtReducers :ReducersList = {
   loginForm:loginReducer
 }
 
 export const StoreDecorator = (
   state:DeepPartial<StateSchema>, 
-  asyncReducers?:DeepPartial<ReducersMapObject<StateSchema>>
+  asyncReducers?:ReducersList
 ) => (StoryComponent: StoryFn) => {
   return (
       <StoreProvider initialState={state as StateSchema} asyncReducers={{...defualtReducers, ...asyncReducers}}>
