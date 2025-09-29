@@ -1,29 +1,29 @@
 /* eslint-disable no-unused-vars */
 import {
   Action,
+
   AnyAction,
+
   CombinedState,
   EnhancedStore,
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { CounterSchema } from "entities/Counter";
-import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
+import { ProfileSchema } from "features/EditableProfileCard";
 import { NavigateOptions, To } from "react-router-dom";
 
 export interface StateSchema {
-  counter: CounterSchema;
   user: UserSchema;
   loginForm?: LoginSchema;
   profile?:ProfileSchema;
 }
 
-export type ReducersStateSchema = Reducer<CounterSchema, Action<unknown>> &
-  Reducer<UserSchema, Action<unknown>> &
-  Reducer<LoginSchema, Action<unknown>>;
+export type ReducersStateSchema =
+  Reducer<UserSchema, Action<string>> &
+  Reducer<LoginSchema, Action<string>>;
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
@@ -47,4 +47,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig <T> {
   rejectedValue:T;
   extra:ThunkExtraArg;
+  state:StateSchema;
 }

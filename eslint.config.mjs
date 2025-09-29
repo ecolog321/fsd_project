@@ -23,7 +23,7 @@ export default defineConfig([
             "react/react-in-jsx-scope": "off",
             "react/jsx-uses-react": "error",
             "react/jsx-uses-vars": "error",
-            "react/jsx-indent":[2,4],
+            "react/jsx-indent":[0,2],
             'react-hooks/rules-of-hooks': 'error',
             'react-hooks/exhaustive-deps': 'warn',
             "no-unused-vars":"warn",
