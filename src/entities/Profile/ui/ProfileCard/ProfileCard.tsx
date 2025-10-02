@@ -3,7 +3,7 @@ import cls from "./ProfileCard.module.scss";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import Text, { TextAlign, TextTheme } from "shared/ui/Text/Text";
 import Input from "shared/ui/Input/Input";
-import { Profile } from "features/EditableProfileCard/model/types/profile";
+import { Profile, ValidateProfileError } from "features/EditableProfileCard/model/types/profile";
 import Loader from "shared/ui/Loader/Loader";
 import Avatar from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
@@ -15,6 +15,7 @@ interface ProfileCardProps {
   data?: Profile;
   isLoading?: boolean;
   error?: string;
+  validateErrors?:ValidateProfileError[];
   readonly?: boolean;
   onChangeFistname?: (value?: string) => void;
   onChangeLastname?: (value?: string) => void;
@@ -78,14 +79,14 @@ const ProfileCard = ({
       <div>
         <Input
           value={data?.firstname}
-          placeholder={t("Ваше имя")}
+          placeholder={t("Имя")}
           className={cls.input}
           onChange={onChangeFistname}
           readonly={readonly}
         />
         <Input
           value={data?.lastname}
-          placeholder={t("Ваша фамилия")}
+          placeholder={t("Фамилия")}
           className={cls.input}
           onChange={onChangeLastname}
           readonly={readonly}

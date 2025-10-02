@@ -4,8 +4,20 @@
     "Длинный язык":"English",
     "Главная":"Main",
     "О сайте":"About",
-    "Войти":"Sing in",
+    "Войти":"Log in",
+    "Выйти":"Log out",
     "Введите логин":"Enter login",
     "Введите пароль":"Enter password",
-    "Форма авторизации":"Authorization"
+    "Форма авторизации":"Authorization",
+    "Отменить":"Cancel",
+    "Редактировать":"Edit",
+    "Сохранить":"Save",
+    "Профиль":"Profile",
+    "Имя":"Name",
+    "Фамилия":"Lastname",
+    "Возраст":"Age",
+    "Город":"City",
+    "Страна":"Country",
+    "Валюта":"Currency",
+    "Никнэйм":"Username"
 }

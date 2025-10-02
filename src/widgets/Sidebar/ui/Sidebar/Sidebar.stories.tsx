@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import Sidebar from './Sidebar';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -20,8 +21,9 @@ type Story = StoryObj<typeof ComponentMeta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {
+    decorators:StoreDecorator({})
 };
 
 export const Dark: Story = {
-    decorators:[ThemeDecorator(Theme.DARK)]
+    decorators:[ThemeDecorator(Theme.DARK), StoreDecorator({})]
 };

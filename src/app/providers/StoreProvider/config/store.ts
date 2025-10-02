@@ -5,13 +5,13 @@ import {
 import { StateSchema } from "./StateSchema";
 import { userReducers } from "entities/User";
 import { createReducerManager } from "./reducerManager";
-import { $api } from "shared/api/api";
+import { $api, getApi } from "shared/api/api";
 import { NavigateOptions, To } from "react-router-dom";
 
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
+  navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -28,14 +28,14 @@ export function createReduxStore(
       getDefaultMiddleware({
         thunk: {
           extraArgument: {
-            api: $api,
+            api: getApi(),
             navigate,
           },
         },
       }),
   });
-
-  // @ts-expect-error 1233
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   store.reducerManager = reducerManager;
 
   return store;

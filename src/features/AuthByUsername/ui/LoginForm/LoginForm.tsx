@@ -5,10 +5,6 @@ import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import Input from "shared/ui/Input/Input";
 import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
-import {
-  loginActions,
-  loginReducer,
-} from "features/AuthByUsername/model/slice/loginSlice";
 import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername";
 import Text, { TextTheme } from "shared/ui/Text/Text";
 import { getLoginUsername } from "features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername";
@@ -19,10 +15,11 @@ import DynamicMudleLoader, {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { loginActions, loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 
 export interface LoginFormProps {
   className?: string;
-  onSuccess: (() => void) | undefined;
+  onSuccess?: (() => void) | undefined;
 }
 
 const initialReducers: ReducersList = {
