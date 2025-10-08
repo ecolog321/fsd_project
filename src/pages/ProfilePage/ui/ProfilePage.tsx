@@ -3,8 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import DynamicModuleLoader, {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { ProfileCard } from "entities/Profile";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import {
@@ -15,6 +14,7 @@ import {
   getProfileReadonly,
   getProfileValidateErrors,
   profileActions,
+  ProfileCard,
   profileReducers,
   ValidateProfileError,
 } from "features/EditableProfileCard";
@@ -23,6 +23,8 @@ import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import Text from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
+import { useParams } from "react-router-dom";
 
 interface ProfilePageProps {
   className?: string;
@@ -32,8 +34,9 @@ const reducers: ReducersList = {
   profile: profileReducers,
 };
 
-const ProfilePage = ({ className }: ProfilePageProps) =>{
-  const {t}=useTranslation();
+const ProfilePage = ({ className }: ProfilePageProps) => {
+  const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileLoading);
@@ -42,16 +45,18 @@ const ProfilePage = ({ className }: ProfilePageProps) =>{
   const readonly = useSelector(getProfileReadonly);
 
   const validateErrorTranslates = {
-    [ValidateProfileError.SERVER_ERROR]: t('Ошибка при сохранении'),
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
-    [ValidateProfileError.INCORRECT_AGE]: t('Возраст должен быть числом'),
-    [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректно указана страна'),
-    [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
-  }
+    [ValidateProfileError.SERVER_ERROR]: t("Ошибка при сохранении"),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t("Имя и фамилия обязательны"),
+    [ValidateProfileError.INCORRECT_AGE]: t("Возраст должен быть числом"),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t("Некорректно указана страна"),
+    [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
+  };
 
-  useEffect(() => {
-      dispatch(fetchProfileData());
-  }, [dispatch]);
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  });
 
   const onChangeFirstname = useCallback(
     (value?: string) => {

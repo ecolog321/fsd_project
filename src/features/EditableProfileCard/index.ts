@@ -8,10 +8,11 @@ import { getProfileReadonly } from "./model/selectors/getProfileReadonly/getProf
 import { fetchProfileData } from "./model/services/fetchUserProfileData/fetchUserProfileData";
 import { updateProfileData } from "./model/services/updateProfileData/updateProfileData";
 import { profileActions, profileReducers } from "./model/slice/profileSlice";
+import ProfileCard from "./ui/ProfileCard/ProfileCard";
 
 export { Profile, ProfileSchema, ValidateProfileError } from "./model/types/profile";
 
-export { fetchProfileData, profileActions, profileReducers, updateProfileData};
+export { fetchProfileData, profileActions, profileReducers, updateProfileData, ProfileCard};
 
 export {
   getProfileData,

@@ -45,5 +45,5 @@ const articleDetailsCommentsSlice = createSlice({
   },
 });
 
-export const { reducer: articleDetailsCommentsReducer } =
+export const { reducer: articleDetailsCommentsReducers } =
   articleDetailsCommentsSlice;

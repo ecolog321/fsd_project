@@ -27,7 +27,7 @@ describe("fetchProfileData.test", () => {
    
     const thunk = new TestAsyncThunk(fetchProfileData as ActionCreatorType<unknown, unknown, unknown>);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk(data);
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe("rejected");

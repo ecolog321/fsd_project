@@ -12,11 +12,11 @@ export type ReducersList = {
 
 interface DynamicModuleLoaderProps {
   reducers: ReducersList;
-  removeAfterUmnount: boolean;
+  removeAfterUmnount?: boolean;
 }
 
 const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-  const { children, reducers, removeAfterUmnount } = props;
+  const { children, reducers, removeAfterUmnount = true } = props;
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {

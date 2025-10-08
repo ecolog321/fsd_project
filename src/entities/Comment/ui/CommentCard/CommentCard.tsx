@@ -4,15 +4,16 @@ import cls from "./CommentCard.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import Text from "shared/ui/Text/Text";
 import Skeleton from "shared/ui/Skeleton/Skeleton";
+import AppLink from "shared/ui/AppLink/AppLink";
+import { RouterPath } from "shared/config/routeConfig/routeConfig";
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
-
   if (isLoading) {
     return (
       <div className={classNames(cls.commentCard, {}, [className])}>
@@ -29,14 +30,21 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
       </div>
     );
   }
+
+  if (!comment) {
+    return null;
+  }
+
   return (
-    <div className={classNames(cls.commentCard, {}, [className])}>
-      <div className={cls.header}>
-        {comment.user.avatar ? (
-          <Avatar src={comment.user.avatar} size={40} />
-        ) : null}
-        <Text className={cls.username} text={comment.user.username} />
-      </div>
+    <div className={classNames(cls.commentCard, {}, [className, cls.loading])}>
+      <AppLink to={`${RouterPath.profile}${comment.user.id}`}>
+        <div className={cls.header}>
+          {comment.user.avatar ? (
+            <Avatar src={comment.user.avatar} size={40} />
+          ) : null}
+          <Text className={cls.username} text={comment.user.username} />
+        </div>
+      </AppLink>
       <Text className={cls.text} text={comment.text} />
     </div>
   );

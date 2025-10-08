@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "article": "1",
+      "userId": "1",
+      "text": "hello",
+      "id": "Qdg_azw"
+    },
+    {
+      "article": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "xrirHam"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello",
+      "id": "cJ6thX9"
     }
   ],
   "users": [
@@ -120,14 +138,29 @@
       "avatar": "https://wallpapers.com/images/high/silhouette-of-majestic-beautiful-horses-aeqic68nejgxbqpo.webp"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Ormina",
+      "lastname": "Wow",
+      "age": 15,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+    
+    },
+    {
+      "id": "2",
+      "firstname": "Dima",
+      "lastname": "Arkhipov",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "meg",
+      "avatar": "https://wallpapers.com/images/high/silhouette-of-majestic-beautiful-horses-aeqic68nejgxbqpo.webp"
+    }
+  ]
 }

@@ -3,9 +3,17 @@ import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { profileReducers } from "features/EditableProfileCard";
+import { articleDetailsReducers } from "entities/Article/model/slice/articleDetailsSlice";
+import { articleDetailsCommentsReducers } from "pages/ArticleDetailsPage/model/slice/articleDetailsCommentSlice";
+import { addCommentFormReducers } from "features/addCommentForm/model/slice/addCommentFormSlice";
 
 const defualtReducers :ReducersList = {
-  loginForm:loginReducer
+  loginForm:loginReducer,
+  profile:profileReducers,
+  articleDetails:articleDetailsReducers,
+  addCommentForm:addCommentFormReducers,
+  articleDetailsComments:articleDetailsCommentsReducers
 }
 
 export const StoreDecorator = (
