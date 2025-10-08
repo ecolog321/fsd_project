@@ -8,7 +8,7 @@ interface ArticlePageProps {
 
 const ArticlePage = ({ className }: ArticlePageProps) => {
   return (
-      <div className={classNames(cls.ArticlePage, {}, [className])}>
+      <div className={classNames(cls.articlePage, {}, [className])}>
       ARTICLE PAGE
       </div>
   );

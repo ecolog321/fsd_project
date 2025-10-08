@@ -4,7 +4,7 @@ import DynamicModuleLoader, {
 import cls from "./ArticleDetails.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { articleDetailsReducers } from "entities/Article/model/slice/articleDetailsSlice";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
 import { useSelector } from "react-redux";
@@ -26,6 +26,7 @@ import {
 import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -40,6 +41,10 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsisLoading);
   const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
+
+  useInitialEffect(()=>{
+    dispatch(fetchArticleById(id))
+  })
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -77,10 +82,6 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   }, []);
 
   let content;
-
-  useEffect(() => {
-    dispatch(fetchArticleById(id));
-  }, [dispatch, id]);
 
   if (isLoading) {
     content = (
