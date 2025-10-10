@@ -45,7 +45,7 @@ const ArticleViewSelector = ({
           <Icon
             Svg={viewType.icon}
             className={classNames("", {
-              [cls.notSelected]: viewType.view === view,
+              [cls.notSelected]: viewType.view !== view,
             })}
           />
         </Button>

@@ -24,7 +24,7 @@ const articlesPageSlice = createSlice({
     error: undefined,
     entities: {},
     ids: [],
-    view: ArticleView.PLATE,
+    view:ArticleView.PLATE,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {

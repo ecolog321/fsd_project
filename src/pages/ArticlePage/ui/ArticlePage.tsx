@@ -46,7 +46,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
 
   useInitialEffect(() => {
     dispatch(fetchArticlesList());
-    dispatch(articlesPageActions.initState)
+    dispatch(articlesPageActions.initState())
   });
   return (
     <DynamicModuleLoader reducers={reducers}>
