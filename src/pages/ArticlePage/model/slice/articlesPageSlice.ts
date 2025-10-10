@@ -1,0 +1,59 @@
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from "@reduxjs/toolkit";
+import { StateSchema } from "app/providers/StoreProvider";
+import { Article, ArticleView } from "entities/Article";
+import { ArticlesPageSchema } from "../types/articlesPageSchema";
+import { fetchArticlesList } from "../services/fetchArticlesList";
+import { ARTICLE_VIEW_KEY } from "shared/const/localstorage";
+
+const articlesAdapter = createEntityAdapter<Article>({
+  selectId: (article: Article) => article.id,
+});
+
+export const getArticles = articlesAdapter.getSelectors<StateSchema>(
+  (state) => state.articlesPage || articlesAdapter.getInitialState()
+);
+
+const articlesPageSlice = createSlice({
+  name: "articlePageSlice",
+  initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
+    isLoading: false,
+    error: undefined,
+    entities: {},
+    ids: [],
+    view: ArticleView.PLATE,
+  }),
+  reducers: {
+    setView: (state, action: PayloadAction<ArticleView>) => {
+      state.view = action.payload;
+      localStorage.setItem(ARTICLE_VIEW_KEY, action.payload)
+    },
+    initState: state =>{
+      state.view = localStorage.getItem(ARTICLE_VIEW_KEY) as ArticleView;
+    }
+  },
+    extraReducers: (builder) => {
+      builder
+        .addCase(fetchArticlesList.pending, (state) => {
+          state.error = undefined;
+          state.isLoading = true;
+        })
+        .addCase(fetchArticlesList.rejected, (state, action) => {
+          state.error = action.payload as string;
+          state.isLoading = false;
+        })
+        .addCase(
+          fetchArticlesList.fulfilled,
+          (state, action: PayloadAction<Article[]>) => {
+            state.isLoading = false;
+            articlesAdapter.setAll(state, action.payload);
+          }
+        );
+    },
+});
+
+export const { reducer: articlesPageReducers, actions: articlesPageActions } =
+  articlesPageSlice;
