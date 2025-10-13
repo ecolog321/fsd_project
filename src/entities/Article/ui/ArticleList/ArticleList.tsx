@@ -26,14 +26,6 @@ const ArticleList = memo(({
   isLoading,
 }: ArticleListProps) => {
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
-
   const renderArticle = (article: Article) => {
     return (
       <ArticleListItem
@@ -46,11 +38,10 @@ const ArticleList = memo(({
   };
 
   return (
-    <>
       <div className={classNames(cls.card, {}, [className, cls[view]])}>
         {articles.length > 0 ? articles.map(renderArticle) : null}
+        {isLoading && getSkeletons(view)}
       </div>
-    </>
   );
 });
 
