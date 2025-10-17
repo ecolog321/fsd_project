@@ -11,11 +11,12 @@ import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
-import { LoginSchema } from "features/AuthByUsername";
-import { ProfileSchema } from "features/EditableProfileCard";
+import { LoginSchema } from "features/authByUsername";
+import { ProfileSchema } from "features/editableProfileCard";
+import { SortArticlesSchema } from "features/sortArticles/model/types/sortArticles";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlePage";
-import { NavigateOptions, To } from "react-router-dom";
+import { ScrollSaveSchema } from "widgets/Page";
 
 export interface StateSchema {
   user: UserSchema;
@@ -25,6 +26,8 @@ export interface StateSchema {
   articleDetailsComments?:ArticleDetailsCommentsSchema;
   addCommentForm?:AddCommentFormSchema;
   articlesPage?:ArticlesPageSchema;
+  scrollSave:ScrollSaveSchema;
+  sortArticles?:SortArticlesSchema;
 }
 
 export type ReducersStateSchema = Reducer<UserSchema, Action<string>> &

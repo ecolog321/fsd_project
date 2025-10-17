@@ -1,9 +1,9 @@
 import { StoryFn } from "@storybook/react-webpack5";
 import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { loginReducer } from "features/authByUsername/model/slice/loginSlice";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { profileReducers } from "features/EditableProfileCard";
+import { profileReducers } from "features/editableProfileCard";
 import { articleDetailsReducers } from "entities/Article/model/slice/articleDetailsSlice";
 import { articleDetailsCommentsReducers } from "pages/ArticleDetailsPage/model/slice/articleDetailsCommentSlice";
 import { addCommentFormReducers } from "features/addCommentForm/model/slice/addCommentFormSlice";

@@ -9,7 +9,7 @@ import {
   getProfileReadonly,
   profileActions,
   updateProfileData,
-} from "features/EditableProfileCard";
+} from "features/editableProfileCard";
 import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { getUserAuthData } from "entities/User";

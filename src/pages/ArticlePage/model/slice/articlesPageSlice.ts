@@ -24,10 +24,11 @@ const articlesPageSlice = createSlice({
     error: undefined,
     entities: {},
     ids: [],
-    view: ArticleView.PLATE,
+    limit:4,
+    view:ArticleView.PLATE,
     page: 1,
     hasMore: true,
-    _inited:false,
+    _inited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -46,9 +47,13 @@ const articlesPageSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, action) => {
         state.error = undefined;
         state.isLoading = true;
+
+        if (action.meta.arg.replace) {
+           articlesAdapter.removeAll(state);
+        }
       })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.error = action.payload as string;
@@ -56,10 +61,15 @@ const articlesPageSlice = createSlice({
       })
       .addCase(
         fetchArticlesList.fulfilled,
-        (state, action: PayloadAction<Article[]>) => {
+        (state, action) => {
           state.isLoading = false;
-          articlesAdapter.addMany(state, action.payload);
-          state.hasMore = action.payload.length > 0;
+          state.hasMore = action.payload.length >= state.limit;
+
+          if (action.meta.arg.replace) {
+             articlesAdapter.setAll(state, action.payload);
+          } else {
+             articlesAdapter.addMany(state, action.payload);
+          }
         }
       );
   },
