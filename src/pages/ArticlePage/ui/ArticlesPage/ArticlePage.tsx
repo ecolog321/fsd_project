@@ -44,7 +44,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
 
   useEffect(() => {
     dispatch(initArticlesPage(searchParams));
-  }, [dispatch, inited, view]);
+  }, [dispatch, inited, view, searchParams]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUmnount={false}>

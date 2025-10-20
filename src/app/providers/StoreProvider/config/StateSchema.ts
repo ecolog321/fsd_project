@@ -14,7 +14,7 @@ import { AddCommentFormSchema } from "features/addCommentForm";
 import { LoginSchema } from "features/authByUsername";
 import { ProfileSchema } from "features/editableProfileCard";
 import { SortArticlesSchema } from "features/sortArticles/model/types/sortArticles";
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlePage";
 import { ScrollSaveSchema } from "widgets/Page";
 
@@ -23,7 +23,7 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?:ArticleDetailsCommentsSchema;
+  articleDetailsPage?:ArticleDetailsPageSchema;
   addCommentForm?:AddCommentFormSchema;
   articlesPage?:ArticlesPageSchema;
   scrollSave:ScrollSaveSchema;
