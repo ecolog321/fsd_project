@@ -2,7 +2,7 @@ import { memo, useCallback } from "react";
 import cls from "./ArticleDetailsPage.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleDetails, ArticleList } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Text, { TextTheme } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import DynamicModuleLoader, {
@@ -16,13 +16,12 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId";
 import { AddCommentForm } from "features/addCommentForm";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle";
-import Button from "shared/ui/Button/Button";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page";
 import { getArticleRecommendations } from "../../model/slice/articleDetailsRecommendationsSlice";
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleReccomendations";
 import { articleDetailsPageReducer } from "../../model/slice";
+import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -41,7 +40,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     getArticleRecommendationsIsLoading
   );
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -50,9 +49,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     [dispatch]
   );
 
-  const onBackToList = useCallback(() => {
-    navigate(RouterPath.articles);
-  }, [navigate]);
+
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -70,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList}>Назад к списку</Button>
+       <ArticleDetailsPageHeader/>
         <ArticleDetails id={id} />
         <Text className={cls.title} title={"Рекомендации"} />
         <ArticleList

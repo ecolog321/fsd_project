@@ -4,13 +4,19 @@
   background: var(--inverted-bg-color);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
-}
-
-.links {
-  margin-left: auto;
 }
 
 .mainLink {
   margin-right: 15px;
+}
+
+.logo {
+  width: var(--sidebar-width);
+  margin-left: 15px;
+}
+
+.createBtn {
+  margin-left: 15px;
 }

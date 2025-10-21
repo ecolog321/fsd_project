@@ -32,7 +32,7 @@ const ArticleListItem = ({
 }: ArticleListItemProps) => {
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
-    navigate(RouterPath.articles_details + article.id);
+    navigate(RouterPath.article_details + article.id);
   }, [article.id, navigate]);
 
   if (view === ArticleView.LIST) {
@@ -61,7 +61,7 @@ const ArticleListItem = ({
           <div className={cls.footer}>
             <AppLink
               target={target}
-              to={RouterPath.articles_details + article.id}
+              to={RouterPath.article_details + article.id}
             >
               <Button onClick={onOpenArticle}>Читать далее</Button>
             </AppLink>
@@ -76,7 +76,7 @@ const ArticleListItem = ({
     <AppLink
       target={target}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
-      to={RouterPath.articles_details + article.id}
+      to={RouterPath.article_details + article.id}
     >
       <Card className={cls.card}>
         <div className={cls.imgWrapper}>
