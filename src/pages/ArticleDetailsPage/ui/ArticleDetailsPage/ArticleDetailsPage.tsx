@@ -67,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-       <ArticleDetailsPageHeader/>
+        <ArticleDetailsPageHeader/>
         <ArticleDetails id={id} />
         <Text className={cls.title} title={"Рекомендации"} />
         <ArticleList

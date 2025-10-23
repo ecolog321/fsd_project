@@ -37,10 +37,10 @@ const Text = memo(({
 }: TextProps) => {
 
   return (
-      <div className={classNames(cls.text, {}, [className, cls[theme], cls[aling], cls[size]])}>
-          {title && <p className={cls.title}>{title}</p>}
-          {text && <p className={cls.text}>{text}</p>}
-      </div>
+    <div className={classNames(cls.text, {}, [className, cls[theme], cls[aling], cls[size]])}>
+      {title && <p className={cls.title}>{title}</p>}
+      {text && <p className={cls.text}>{text}</p>}
+    </div>
   );
 });
 

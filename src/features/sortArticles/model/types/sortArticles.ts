@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { EntityState } from "@reduxjs/toolkit";
 import { Article, ArticleType} from "entities/Article";
 

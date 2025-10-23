@@ -17,14 +17,14 @@ const LangSwitcher: FC<LangSwitcherProps> = memo(
     };
 
     return (
-        <Button
+      <Button
         type="button"
         className={classNames("", {}, [className])}
         theme={ButtonTheme.CLEAR}
         onClick={toogle}
       >
-            {t(short ? "Короткий язык" : "Длинный язык")}
-        </Button>
+        {t(short ? "Короткий язык" : "Длинный язык")}
+      </Button>
     );
   }
 );

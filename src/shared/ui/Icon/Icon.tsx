@@ -9,9 +9,9 @@ interface IconProps {
 
 const Icon = ({ className , Svg}: IconProps) => {
   return (
-      <Svg className={classNames(cls.icon, {}, [className])}>
+    <Svg className={classNames(cls.icon, {}, [className])}>
       
-      </Svg>
+    </Svg>
   );
 };
 

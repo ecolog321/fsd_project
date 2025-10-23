@@ -16,6 +16,7 @@ import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import AppLink from "shared/ui/AppLink/AppLink";
+import { useTranslation } from "react-i18next";
 
 interface ArticleListItemProps {
   className?: string;
@@ -30,6 +31,7 @@ const ArticleListItem = ({
   article,
   target,
 }: ArticleListItemProps) => {
+  const {t}=useTranslation()
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
     navigate(RouterPath.article_details + article.id);
@@ -63,7 +65,7 @@ const ArticleListItem = ({
               target={target}
               to={RouterPath.article_details + article.id}
             >
-              <Button onClick={onOpenArticle}>Читать далее</Button>
+              <Button onClick={onOpenArticle}>{t('Читать далее')}</Button>
             </AppLink>
             <Text text={String(article.views)} className={cls.views} />
             <Icon Svg={EyeIcon} />

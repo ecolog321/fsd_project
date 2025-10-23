@@ -13,7 +13,7 @@ const ArticleCodeBlockComponent = memo(
   ({ className, block }: ArticleCodeBlockComponentProps) => {
     return (
       <div
-        className={classNames(cls.ArticleImageBlockComponent, {}, [className])}
+        className={classNames(cls.articleImageBlockComponent, {}, [className])}
       >
         <Code text={block.code}/>
       </div>

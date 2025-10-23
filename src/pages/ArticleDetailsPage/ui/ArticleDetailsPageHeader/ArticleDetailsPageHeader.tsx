@@ -7,6 +7,7 @@ import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { useSelector } from "react-redux";
 import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
 import { getArticleDetailsData } from "entities/Article";
+import { useTranslation } from "react-i18next";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -15,6 +16,7 @@ interface ArticleDetailsPageHeaderProps {
 const ArticleDetailsPageHeader = ({
   className,
 }: ArticleDetailsPageHeaderProps) => {
+  const {t}=useTranslation()
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
   const article = useSelector(getArticleDetailsData);
@@ -29,10 +31,10 @@ const ArticleDetailsPageHeader = ({
 
   return (
     <div className={classNames(cls.articleDetailsPageHeader, {}, [className])}>
-      <Button onClick={onBackToList}>Назад к списку</Button>
+      <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
       {canEdit && (
         <Button className={cls.editBtn} onClick={onEditArticle}>
-          Редактировать
+          {t('Редактировать')}
         </Button>
       )}
     </div>

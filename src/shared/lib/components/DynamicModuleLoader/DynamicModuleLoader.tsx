@@ -5,7 +5,6 @@ import { Reducer } from "@reduxjs/toolkit";
 import { useStore } from "react-redux";
 
 export type ReducersList = {
-  // eslint-disable-next-line no-unused-vars
   [name in StateSchemaKey]?: Reducer;
 };
 

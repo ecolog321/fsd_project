@@ -3,8 +3,8 @@ import "../../../../app/styles/index.scss";
 
 export const StyleDecorator: Decorator = (Story) => {
   return (
-      <>
-          <Story />
-      </>
+    <>
+      <Story />
+    </>
   );
 };

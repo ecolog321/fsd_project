@@ -20,10 +20,10 @@ const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
   }
   
   return (
-      <AppLink theme={AppLinkTheme.PRIMARY} className={classNames(cls.item, {[cls.collapsed]:collapsed})} to={item.path}>
-          <item.Icon className={cls.icon} />
-          <span className={cls.link}> {t(item.text)}</span>
-      </AppLink>
+    <AppLink theme={AppLinkTheme.PRIMARY} className={classNames(cls.item, {[cls.collapsed]:collapsed})} to={item.path}>
+      <item.Icon className={cls.icon} />
+      <span className={cls.link}> {t(item.text)}</span>
+    </AppLink>
   );
 };
 

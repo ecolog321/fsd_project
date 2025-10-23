@@ -1,4 +1,4 @@
-/*eslint-disable @typescript-eslint/ban-ts-comment */
+ 
 /*@ts-ignore */
 export const mockApi = {
   get: jest.fn(),

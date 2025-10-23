@@ -9,7 +9,6 @@ import { getUserAuthData, userActions } from "entities/User";
 import Text, { TextTheme } from "shared/ui/Text/Text";
 import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
-import { Theme } from "app/providers/ThemeProvider";
 
 interface NavbarProps {
   className?: string;
@@ -42,7 +41,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
           theme={AppLinkTheme.PRIMARY}
           className={cls.createBtn}
         >
-          Создать статью
+          {t('Создать статью')}
         </AppLink>
         <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>
           {t("Выйти")}

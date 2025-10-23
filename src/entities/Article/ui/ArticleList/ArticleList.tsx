@@ -41,10 +41,10 @@ const ArticleList = memo(({
   };
 
   return (
-      <div className={classNames(cls.card, {}, [className, cls[view]])}>
-        {articles.length > 0 ? articles.map(renderArticle) : null}
-        {isLoading && getSkeletons(view)}
-      </div>
+    <div className={classNames(cls.card, {}, [className, cls[view]])}>
+      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
+    </div>
   );
 });
 

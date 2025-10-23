@@ -58,6 +58,7 @@ const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.inputWrapper, mods, [className])}>
       <input
+        
         ref={ref}
         type={type}
         value={value}

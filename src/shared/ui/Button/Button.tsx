@@ -41,7 +41,7 @@ const Button = memo((props:ButtonProps) => {
   };
 
   return (
-      <button
+    <button
       type="button"
       className={classNames(cls.button, mods, [
         className,
@@ -51,8 +51,8 @@ const Button = memo((props:ButtonProps) => {
       disabled={disabled}
       {...otherProps}
     >
-          {children}
-      </button>
+      {children}
+    </button>
   );
 });
 

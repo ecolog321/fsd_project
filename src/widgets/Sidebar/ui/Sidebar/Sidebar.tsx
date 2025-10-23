@@ -23,18 +23,18 @@ const Sidebar = memo((props:SidebarProps) => {
 
   const itemList = useMemo(() => {
     return sidebarItemsList.map((item) => (
-        <SidebarItem key={item.path} item={item} collapsed={collasped}/>
+      <SidebarItem key={item.path} item={item} collapsed={collasped}/>
     ));
   }, [collasped, sidebarItemsList]);
 
   return (
-      <div
+    <div
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collasped }, [
         className,
       ])}
     >
-          <Button
+      <Button
         data-testid="sidebar-toogle"
         onClick={onToggle}
         theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -42,17 +42,17 @@ const Sidebar = memo((props:SidebarProps) => {
         square
         size={ButtonSize.XL}
       >
-              {collasped ? ">" : "<"}
-          </Button>
+        {collasped ? ">" : "<"}
+      </Button>
 
-          <div className={cls.items}>
-              {itemList}
-          </div>
-          <div className={cls.switchers}>
-              <ThemeSlider />
-              <LangSwitcher short={collasped} className={cls.lang} />
-          </div>
+      <div className={cls.items}>
+        {itemList}
       </div>
+      <div className={cls.switchers}>
+        <ThemeSlider />
+        <LangSwitcher short={collasped} className={cls.lang} />
+      </div>
+    </div>
   );
 });
 

@@ -1,7 +1,5 @@
 import { User } from "entities/User";
 
-
-/* eslint-disable no-unused-vars */
 export enum ArticleBlockType {
   CODE = "CODE",
   IMAGE = "IMAGE",

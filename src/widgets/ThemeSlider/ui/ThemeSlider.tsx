@@ -14,13 +14,13 @@ const ThemeSlider: FC<ThemeSliderProps> = memo(
   ({ className }: ThemeSliderProps) => {
     const { toggleTheme, theme } = useTheme();
     return (
-        <Button
+      <Button
         theme={ButtonTheme.CLEAR}
         className={classNames(cls.themeSlider, {}, [className])}
         onClick={toggleTheme}
       >
-            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-        </Button>
+        {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+      </Button>
     );
   }
 );

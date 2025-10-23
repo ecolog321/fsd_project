@@ -16,6 +16,7 @@ import {
 import DynamicModuleLoader, {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useTranslation } from "react-i18next";
 
 export interface AddCommentFormProps {
   className?: string;
@@ -23,6 +24,7 @@ export interface AddCommentFormProps {
 }
 
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
+  const {t} =useTranslation()
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
@@ -51,7 +53,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button onClick={onSendHandler}>Отправить</Button>
+        <Button onClick={onSendHandler}>{t('Отправить')}</Button>
       </div>
     </DynamicModuleLoader>
   );

@@ -1,4 +1,4 @@
-import { FC, memo, ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./AppLink.module.scss";
@@ -17,9 +17,9 @@ interface AppLinkProps extends LinkProps {
 
 const AppLink = memo(({ className, children, to, theme=AppLinkTheme.PRIMARY }:AppLinkProps) => {
     return (
-        <Link to={to} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
-            {children}
-        </Link>
+      <Link to={to} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
+        {children}
+      </Link>
     );
 });
 

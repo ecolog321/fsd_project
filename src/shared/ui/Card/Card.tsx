@@ -15,10 +15,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 const Card = ({ className, children, theme = CardTheme.NORMAL, ...othersProps }: CardProps) => {
   return (
-      <div className={classNames(cls.сard, {}, [className, cls[theme]])}
+    <div className={classNames(cls.сard, {}, [className, cls[theme]])}
       {...othersProps}>
       {children}
-      </div>
+    </div>
   );
 };
 

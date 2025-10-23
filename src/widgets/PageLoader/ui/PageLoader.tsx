@@ -9,9 +9,9 @@ interface PageLoaderProps {
 
 const PageLoader:FC<PageLoaderProps> = ({className}) => {
     return (
-        <div className={classNames(cls.pageLoader, {}, [className])}>
-            <Loader/>
-        </div>
+      <div className={classNames(cls.pageLoader, {}, [className])}>
+        <Loader/>
+      </div>
     );
 };
 

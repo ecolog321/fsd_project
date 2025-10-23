@@ -55,38 +55,38 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [onSuccess, dispatch, password, username]);
 
   return (
-      <DynamicMudleLoader reducers={initialReducers} removeAfterUmnount>
-          <div className={classNames(cls.loginForm, {}, [className])}>
-              <Text title={t("Форма авторизации")} />
-              {error && (
-              <Text
+    <DynamicMudleLoader reducers={initialReducers} removeAfterUmnount>
+      <div className={classNames(cls.loginForm, {}, [className])}>
+        <Text title={t("Форма авторизации")} />
+        {error && (
+          <Text
             theme={TextTheme.ERROR}
             text={t("Вы ввели неверный логин или пароль")}
           />
         )}
-              <Input
+        <Input
           autoFocus
           placeholder={t("Введите логин")}
           className={cls.input}
           onChange={onChangeUsername}
           value={username}
         />
-              <Input
+        <Input
           placeholder={t("Введите пароль")}
           className={cls.input}
           onChange={onChangePassword}
           value={password}
         />
-              <Button
+        <Button
           theme={ButtonTheme.OUTLINE}
           className={cls.loginBtn}
           onClick={onLoginClick}
           disabled={isLoading}
         >
-                  {t("Войти")}
-              </Button>
-          </div>
-      </DynamicMudleLoader>
+          {t("Войти")}
+        </Button>
+      </div>
+    </DynamicMudleLoader>
   );
 });
 

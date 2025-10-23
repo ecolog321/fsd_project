@@ -20,6 +20,7 @@ import { initArticlesPage } from "../../model/services/initArticlesPage";
 import { Page } from "widgets/Page";
 import { ArticlesPageFilters } from "features/sortArticles";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ArticlePageProps {
   className?: string;
@@ -30,6 +31,7 @@ const reducers = {
 };
 
 const ArticlePage = ({ className }: ArticlePageProps) => {
+  const {t}=useTranslation()
   const dispatch = useAppDispatch();
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
@@ -53,7 +55,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
         onScrollEnd={onLoadNextPart}
       >
         {error ? (
-          <div>Ошибка</div>
+          <div>{t('Ошибка')}</div>
         ) : (
           <>
             <ArticlesPageFilters />
