@@ -3,6 +3,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import i18next from "eslint-plugin-i18next";
+import orminaPlugin from "eslint-plugin-ormina-plugin";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
@@ -15,7 +16,8 @@ export default defineConfig([
       "@typescript-eslint": tseslint.plugin,
       "react": pluginReact,
       "react-hooks": reactHooks,
-      "i18next": i18next
+      "i18next": i18next,
+      "ormina-plugin":orminaPlugin
     },
     languageOptions: {
       globals: {
@@ -40,7 +42,8 @@ export default defineConfig([
       "react-hooks/exhaustive-deps": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "react/display-name": "off",
-      "i18next/no-literal-string": ["error", { markupOnly: true }]
+      "i18next/no-literal-string": ["error", { markupOnly: true }],
+      "ormina-plugin/path-cheker":'warn'
     },
     settings: {
       react: {

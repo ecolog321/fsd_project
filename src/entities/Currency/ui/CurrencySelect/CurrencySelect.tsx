@@ -1,7 +1,7 @@
 import Select from "shared/ui/Select/Select";
 import cls from "./CurrencySelect.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Currency } from "entities/Currency/model/types";
+import { Currency } from "../../model/types";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { useSelector } from "react-redux";
-import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
+import { getCanEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "entities/Article";
 import { useTranslation } from "react-i18next";
 

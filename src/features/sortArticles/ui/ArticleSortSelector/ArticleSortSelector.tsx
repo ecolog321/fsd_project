@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import {
   ArticleSortFeild,
   SortOrder,
-} from "features/sortArticles/model/types/sortArticles";
+} from "../../model/types/sortArticles";
 
 interface ArticleSortSelectorProps {
   className?: string;

@@ -3,10 +3,10 @@ import DynamicModuleLoader, {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import cls from "./ArticleDetails.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { articleDetailsReducers } from "entities/Article/model/slice/articleDetailsSlice";
+import { articleDetailsReducers } from "../../model/slice/articleDetailsSlice";
 import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { useSelector } from "react-redux";
 import {
   getArticleDetailsData,
@@ -22,7 +22,7 @@ import Icon from "shared/ui/Icon/Icon";
 import {
   ArticleBlock,
   ArticleBlockType,
-} from "entities/Article/model/types/article";
+} from "../../model/types/article";
 import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";

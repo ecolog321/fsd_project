@@ -3,7 +3,7 @@ import cls from "./CountrySelect.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import { Country } from "entities/Country/model/types/types";
+import { Country } from "../../model/types/types";
 
 interface CountrySelectProps {
   className?: string;
