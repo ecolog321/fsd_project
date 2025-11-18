@@ -10,7 +10,7 @@ interface LangSwitcherProps {
 
 const LangSwitcher: FC<LangSwitcherProps> = memo(
   ({ className, short }: LangSwitcherProps) => {
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation('common');
 
     const toogle = async () => {
       i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");

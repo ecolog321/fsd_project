@@ -31,7 +31,7 @@ const ArticleListItem = ({
   article,
   target,
 }: ArticleListItemProps) => {
-  const {t}=useTranslation()
+  const {t}=useTranslation('article')
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
     navigate(RouterPath.article_details + article.id);

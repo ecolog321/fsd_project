@@ -24,7 +24,7 @@ export interface AddCommentFormProps {
 }
 
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
-  const {t} =useTranslation()
+  const {t} =useTranslation('article')
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();

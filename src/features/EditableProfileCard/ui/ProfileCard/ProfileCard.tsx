@@ -9,6 +9,8 @@ import Avatar from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country } from "entities/Country";
 import CountrySelect from "entities/Country/ui/CountrySelect/CountrySelect";
+import VStack from "shared/ui/Stack/VStack/VStack";
+import HStack from "shared/ui/Stack/HStack/HStack";
 
 interface ProfileCardProps {
   className?: string;
@@ -42,35 +44,37 @@ const ProfileCard = ({
   onChangeCountry,
   onChangeCurrency,
 }: ProfileCardProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
 
   const mods: Mods = {
     [cls.editing]: !readonly,
   };
   if (isLoading) {
     return (
-      <div
+      <HStack
+        max
+        justify={'center'}
         className={classNames(cls.profileCard, {}, [className, cls.loading])}
       >
         <Loader />
-      </div>
+      </HStack>
     );
   }
   if (error) {
     return (
-      <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+      <HStack justify={'center'} gap={'8'} max className={classNames(cls.profileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
           title={t("Произошла ошибка")}
           text={t("Попробуйте обновить страницу")}
           aling={TextAlign.CENTER}
         />
-      </div>
+      </HStack>
     );
   }
 
   return (
-    <div className={classNames(cls.profileCard, mods, [className])}>
+    <VStack max className={classNames(cls.profileCard, mods, [className])}>
       {data?.avatar && (
         <div className={cls.avatarWraper}>
           <Avatar src={data?.avatar} />
@@ -131,7 +135,7 @@ const ProfileCard = ({
           readonly={readonly}
         />
       </div>
-    </div>
+    </VStack>
   );
 };
 

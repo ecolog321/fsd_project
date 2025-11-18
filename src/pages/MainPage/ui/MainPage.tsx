@@ -3,12 +3,12 @@ import { Page } from "widgets/Page";
 
 
 const MainPage = () => {
-  const {t}=useTranslation()
+  const {t}=useTranslation('common')
   return (
     <Page>
-      <div>{t('Главеая страница')}</div>;
+      <div>{t('Главная')}</div>
     </Page>
-  );
+  )
 };
 
 export default MainPage;

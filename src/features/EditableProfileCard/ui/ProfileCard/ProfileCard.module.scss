@@ -3,21 +3,8 @@
     border: 2px solid var(--inverted-bg-color)
 }
 
-.input {
-    margin-left: 10px;
-}
-
-.avatarWraper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
 .loading,
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 300px;
 }
 

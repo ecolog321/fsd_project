@@ -6,6 +6,7 @@ import Text from "shared/ui/Text/Text";
 import Skeleton from "shared/ui/Skeleton/Skeleton";
 import AppLink from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import VStack from "shared/ui/Stack/VStack/VStack";
 
 interface CommentCardProps {
   className?: string;
@@ -16,7 +17,7 @@ interface CommentCardProps {
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(cls.commentCard, {}, [className])}>
+      <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className])}>
         <div className={cls.header}>
           <Skeleton
             width={30}
@@ -27,7 +28,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
           <Skeleton height={16} width={100} />
         </div>
         <Skeleton width={"100%"} height={50} />
-      </div>
+      </VStack>
     );
   }
 

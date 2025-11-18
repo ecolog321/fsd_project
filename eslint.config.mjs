@@ -2,37 +2,43 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-import i18next from "eslint-plugin-i18next";
+import i18nextPlugin from "eslint-plugin-i18next";
 import orminaPlugin from "eslint-plugin-ormina-plugin";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: ["node_modules/**", "build/**", "storybook/**", "storybook-static/**", "config/jest/**"]
+    ignores: [
+      "node_modules/**",
+      "build/**",
+      "storybook/**",
+      "storybook-static/**",
+      "config/jest/**",
+    ],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
       "@typescript-eslint": tseslint.plugin,
-      "react": pluginReact,
+      react: pluginReact,
       "react-hooks": reactHooks,
-      "i18next": i18next,
-      "ormina-plugin":orminaPlugin
+      i18next: i18nextPlugin,
+      "ormina-plugin": orminaPlugin,
     },
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.es2021
+        ...globals.es2021,
       },
       parser: tseslint.parser,
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
-      }
+          jsx: true,
+        },
+      },
     },
     rules: {
-      indent: 'off',
+      indent: "off",
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "error",
       "react/jsx-uses-vars": "error",
@@ -43,12 +49,14 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "warn",
       "react/display-name": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
-      "ormina-plugin/path-cheker":'warn'
+      "ormina-plugin/path-cheker": "warn",
+      "i18n-ally.sortKeys": true,
+      "i18n-ally.keepFulfilled": true,
     },
     settings: {
       react: {
-        version: "detect"
-      }
-    }
-  }
+        version: "detect",
+      },
+    },
+  },
 ]);

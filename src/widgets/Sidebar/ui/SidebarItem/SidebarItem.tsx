@@ -12,7 +12,7 @@ interface SidebarItemProps {
 }
 
 const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const isAuth = useSelector(getUserAuthData)
 
   if (item.authOnly && !isAuth) {

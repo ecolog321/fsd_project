@@ -31,7 +31,7 @@ const reducers = {
 };
 
 const ArticlePage = ({ className }: ArticlePageProps) => {
-  const {t}=useTranslation()
+  const {t}=useTranslation('article')
   const dispatch = useAppDispatch();
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);

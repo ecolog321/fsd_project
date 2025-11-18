@@ -9,7 +9,7 @@ interface PageErrorProps {
 }
 const PageError:FC<PageErrorProps> = ({className}) => {
 
-    const {t}=useTranslation()
+    const {t}=useTranslation('common')
 
     const realodPage = ()=>{
         location.reload()
