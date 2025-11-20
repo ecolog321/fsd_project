@@ -34,7 +34,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.navbar, {}, [className])}>
+      <header className={classNames(cls.navbar, {}, [className])}>
         <Text className={cls.logo} title="Ormina" theme={TextTheme.PRIMATY} />
         <AppLink
           to={RouterPath.article_create}
@@ -46,11 +46,11 @@ const Navbar = memo(({ className }: NavbarProps) => {
         <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>
           {t("Выйти")}
         </Button>
-      </div>
+      </header>
     );
   }
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <header className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
           {t("Войти")}
@@ -59,7 +59,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
           <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         )}
       </div>
-    </div>
+    </header>
   );
 });
 

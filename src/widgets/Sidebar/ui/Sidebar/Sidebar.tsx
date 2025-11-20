@@ -29,7 +29,7 @@ const Sidebar = memo((props:SidebarProps) => {
   }, [collasped, sidebarItemsList]);
 
   return (
-    <div
+    <aside
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collasped }, [
         className,
@@ -53,7 +53,7 @@ const Sidebar = memo((props:SidebarProps) => {
         <ThemeSlider />
         <LangSwitcher short={collasped} className={cls.lang} />
       </div>
-    </div>
+    </aside>
   );
 });
 
