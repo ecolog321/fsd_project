@@ -9,6 +9,9 @@ import { getUserAuthData, userActions } from "entities/User";
 import Text, { TextTheme } from "shared/ui/Text/Text";
 import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import Avatar from "shared/ui/Avatar/Avatar";
+import HStack from "shared/ui/Stack/HStack/HStack";
 
 interface NavbarProps {
   className?: string;
@@ -16,7 +19,7 @@ interface NavbarProps {
 
 const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthodal] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
 
@@ -36,16 +39,30 @@ const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
         <Text className={cls.logo} title="Ormina" theme={TextTheme.PRIMATY} />
-        <AppLink
-          to={RouterPath.article_create}
-          theme={AppLinkTheme.PRIMARY}
-          className={cls.createBtn}
-        >
-          {t('Создать статью')}
-        </AppLink>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>
-          {t("Выйти")}
-        </Button>
+        <HStack justify={'between'} max>
+          <AppLink
+            to={RouterPath.article_create}
+            theme={AppLinkTheme.PRIMARY}
+            className={cls.createBtn}
+          >
+            {t("Создать статью")}
+          </AppLink>
+          <Dropdown
+            className={cls.dropdown}
+            items={[
+              {
+                  content:t('Профиль'),
+                  href:RouterPath.profile + authData.id
+              },
+              {
+                content: t("Выйти"),
+                onCLick: onLogout,
+              },
+            ]}
+            trigger={<Avatar size={30} src={authData.avatar} />}
+            direction={'bottom left'}
+          />
+        </HStack>
       </header>
     );
   }
