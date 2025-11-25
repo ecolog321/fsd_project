@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Sidebar.module.scss";
-import { ThemeSlider } from "features/ThemeSlider";
+import { ThemeSlider } from "features/themeSlider";
 import Button, { ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import SidebarItem from "../SidebarItem/SidebarItem";
 import { useSelector } from "react-redux";

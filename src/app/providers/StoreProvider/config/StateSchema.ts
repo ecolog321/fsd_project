@@ -15,18 +15,20 @@ import { ProfileSchema } from "features/editableProfileCard";
 import { SortArticlesSchema } from "features/sortArticles/model/types/sortArticles";
 import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlePage";
+import { rtkApi } from "shared/api/rtkApi";
 import { ScrollSaveSchema } from "widgets/Page";
 
 export interface StateSchema {
   user: UserSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsPage?:ArticleDetailsPageSchema;
-  addCommentForm?:AddCommentFormSchema;
-  articlesPage?:ArticlesPageSchema;
-  scrollSave:ScrollSaveSchema;
-  sortArticles?:SortArticlesSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
+  addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
+  scrollSave: ScrollSaveSchema;
+  sortArticles?: SortArticlesSchema;
 }
 
 export type ReducersStateSchema = Reducer<UserSchema, Action<string>> &

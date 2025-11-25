@@ -33,7 +33,6 @@ const Page = ({ className, children, onScrollEnd }: PageProps) => {
   });
 
 useInitialEffect(()=>{
-  console.log(scrollPosition)
   wrapperRef.current.scrollTop = scrollPosition
 })
 
