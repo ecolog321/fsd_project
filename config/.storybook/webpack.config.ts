@@ -8,7 +8,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
         build: '',
         html: '',
         entry: '',
-        src: path.resolve(__dirname, '..', '..', 'src')
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: ''
     }
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.ts', '.tsx')
@@ -32,6 +34,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
         __API__:JSON.stringify(''),
         __PROJECT__:JSON.stringify('storybook')
     }))
+    
     config.module?.rules?.push(buildCssLoader(true))
     return config;
 }

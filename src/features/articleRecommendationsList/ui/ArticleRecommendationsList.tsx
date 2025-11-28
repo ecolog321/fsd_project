@@ -18,7 +18,11 @@ const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = memo(
     const { t } = useTranslation();
     const { data: articles, isLoading } = useArticleRecommendationsList(3);
 
-    return (
+    if (!articles) {
+      return (<Text text={'Нет статей'}/>)
+    }
+
+    return ( 
       <VStack
         gap="8"
         className={classNames(cls.articleRecommendationsList, {}, [className])}

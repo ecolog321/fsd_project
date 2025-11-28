@@ -46,18 +46,21 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             <Button
               theme={ButtonTheme.OUTLINE}
               onClick={onEdit}
+              data-testid='ProfileCardHeader.EditBtn'
             >
               {t("Редактировать")}
             </Button>
           ) : (
             <HStack gap={'16'}>
               <Button
+              data-testid='ProfileCardHeader.CancelBtn'
                 theme={ButtonTheme.OUTLINE}
                 onClick={onCancelEdit}
               >
                 {t("Отменить")}
               </Button>
               <Button
+              data-testid='ProfileCardHeader.SaveBtn'
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 onClick={onSave}
               >

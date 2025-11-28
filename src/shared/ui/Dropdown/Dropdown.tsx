@@ -1,7 +1,7 @@
 import { Menu } from "@headlessui/react";
 import cls from "./Dropdown.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Fragment, ReactNode } from "react";
+import {  ReactNode } from "react";
 import { DropdownDirection } from "shared/types/ui";
 
 import AppLink from "../AppLink/AppLink";
@@ -55,7 +55,7 @@ export function Dropdown(props: DropdownProps) {
             );
           }
           return (
-            <Menu.Item as={'button'} onClick={item.onCLick} key={id}>
+            <Menu.Item as={'button'} style={{width:'100%', border:'none'}} onClick={item.onCLick} key={id}>
               {content}
             </Menu.Item>
           );

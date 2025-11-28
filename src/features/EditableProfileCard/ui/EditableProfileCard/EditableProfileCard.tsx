@@ -106,7 +106,7 @@ const EditableProfileCard: FC<IEditableProfileCardProps> = memo(
         <ProfilePageHeader />
         {validateErrors?.length &&
           validateErrors.map((error) => (
-            <Text text={validateErrorTranslates[error]} key={error} />
+            <Text data-testid={'EditableProfileCard.Error'} text={validateErrorTranslates[error]} key={error} />
           ))}
         <ProfileCard
           data={formData}

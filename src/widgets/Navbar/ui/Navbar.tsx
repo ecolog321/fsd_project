@@ -5,13 +5,14 @@ import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { LoginModal } from "features/authByUsername";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "entities/User";
+import { getUserAuthData, isUserAdmin, userActions } from "entities/User";
 import Text, { TextTheme } from "shared/ui/Text/Text";
 import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import Avatar from "shared/ui/Avatar/Avatar";
 import HStack from "shared/ui/Stack/HStack/HStack";
+import { getUserRoles } from "entities/User/model/selectors/roleSelector/roleSelector";
 
 interface NavbarProps {
   className?: string;
@@ -22,6 +23,10 @@ const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation("common");
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  
+  const role = useSelector(getUserRoles)
+console.log(role, authData)
 
   const onCloseModal = useCallback(() => {
     setIsAuthodal(false);
@@ -50,7 +55,11 @@ const Navbar = memo(({ className }: NavbarProps) => {
           <Dropdown
             className={cls.dropdown}
             items={[
-              {
+              ...(isAdmin ? [{
+                  content:t('Администрирование'),
+                  href:RouterPath.admin_panel
+              }] : []),
+               {
                   content:t('Профиль'),
                   href:RouterPath.profile + authData.id
               },

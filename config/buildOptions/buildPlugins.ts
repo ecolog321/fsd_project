@@ -17,7 +17,7 @@ export function buildPlugins({paths, isDev, apiUrl, project}:BuildOptions): webp
         new webpack.DefinePlugin({
             __IS_DEV__:JSON.stringify(isDev),
             __API__:JSON.stringify(apiUrl),
-            __PROFECT__:JSON.stringify(project),
+            __PROJECT__:JSON.stringify(project),
         }),
         new CopyPlugin({
       patterns: [
