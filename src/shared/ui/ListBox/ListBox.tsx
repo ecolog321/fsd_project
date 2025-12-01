@@ -1,4 +1,4 @@
-import { Listbox as HListbox } from "@headlessui/react";
+import { Listbox as HListbox, ListboxButton as HListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import cls from "./Listbox.module.scss";
 import { Fragment, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -56,14 +56,14 @@ export function Listbox(props: ListboxProps) {
         value={value}
         onChange={onChange}
       >
-        <HListbox.Button disabled={readonly} className={cls.triggerBtn}>
+        <HListboxButton disabled={readonly} className={cls.triggerBtn}>
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
-        </HListbox.Button>
-        <HListbox.Options
+        </HListboxButton>
+        <ListboxOptions
           className={classNames(cls.options, {}, optionsClasses)}
         >
           {items.map((item) => (
-            <HListbox.Option
+            <ListboxOption
               key={item.value}
               value={item.value}
               disabled={item.disabled}
@@ -80,9 +80,9 @@ export function Listbox(props: ListboxProps) {
                   {item.content}
                 </li>
               )}
-            </HListbox.Option>
+            </ListboxOption>
           ))}
-        </HListbox.Options>
+        </ListboxOptions>
       </HListbox>
     </HStack>
   );

@@ -22,7 +22,10 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
+    parameters:{
+        theme:Theme.DARK
+    },
     decorators:[
-        ThemeDecorator(Theme.DARK)
+        ThemeDecorator
     ]
 };

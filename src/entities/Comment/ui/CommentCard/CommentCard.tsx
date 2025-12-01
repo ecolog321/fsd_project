@@ -17,7 +17,7 @@ interface CommentCardProps {
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className])}>
+      <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton
             width={30}
@@ -37,7 +37,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.commentCard, {}, [className, cls.loading])}>
+    <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className])}>
       <AppLink to={`${RouterPath.profile}${comment.user.id}`}>
         <div className={cls.header}>
           {comment.user.avatar ? (
@@ -47,7 +47,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
         </div>
       </AppLink>
       <Text className={cls.text} text={comment.text} />
-    </div>
+    </VStack>
   );
 };
 

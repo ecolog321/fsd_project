@@ -41,7 +41,7 @@ export const OutlineLight: Story = {
         theme:ButtonTheme.OUTLINE
     },
     decorators:[
-        ThemeDecorator(Theme.LIGHT)
+        ThemeDecorator
     ]
 };
 export const OutlineDark: Story = {
@@ -49,7 +49,10 @@ export const OutlineDark: Story = {
         children:'Text',
         theme:ButtonTheme.OUTLINE
     },
+    parameters:{
+        theme:Theme.DARK
+    },
     decorators:[
-        ThemeDecorator(Theme.DARK)
+        ThemeDecorator
     ]
 };

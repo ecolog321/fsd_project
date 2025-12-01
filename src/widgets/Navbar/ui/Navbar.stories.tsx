@@ -1,35 +1,77 @@
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import type { Meta, StoryObj } from "@storybook/react-webpack5";
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Navbar from './Navbar';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import Navbar from "./Navbar";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
+const initialStateNoLog = {
+  user: {
+    authData: undefined,
+    _inited: true,
+  },
+};
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const ComponentMeta = {
-    title: 'widgets/Navbar',
-    component: Navbar,
-    parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+const initialStateLog = {
+  user: {
+    authData: {
+      id: "1",
+      username: "admin",
     },
-    // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+    _inited: true,
+  },
+};
+
+const meta = {
+  title: "widgets/Navbar",
+  component: Navbar,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Navbar>;
 
-export default ComponentMeta;
-type Story = StoryObj<typeof ComponentMeta>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// Stories для неавторизованного пользователя
 export const Light: Story = {
-    args:{},
-    decorators:[
-        StoreDecorator({
-
-        })
-    ]
+  args: {},
+  parameters: {
+    store: initialStateNoLog,
+    theme: Theme.LIGHT,
+  },
+  decorators: [StoreDecorator],
 };
 
 export const Dark: Story = {
-    args:{},
-    decorators:[ThemeDecorator(Theme.DARK), StoreDecorator({})]
+  args: {},
+  parameters: {
+    store: initialStateNoLog,
+    theme: Theme.DARK,
+  },
+  decorators: [ThemeDecorator, StoreDecorator],
+};
+
+// Stories для авторизованного пользователя
+export const LightLoggedIn: Story = {
+  args: {},
+  parameters: {
+    store: {
+      initialState:initialStateLog,
+    },
+    theme: Theme.LIGHT,
+  },
+  decorators: [StoreDecorator],
+};
+
+export const DarkLoggedIn: Story = {
+  args: {},
+  parameters: {
+    store: {
+      initialState:initialStateLog,
+    },
+    theme: Theme.DARK,
+  },
+  decorators: [ThemeDecorator, StoreDecorator],
 };

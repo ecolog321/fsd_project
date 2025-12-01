@@ -1,10 +1,10 @@
-import { SVGProps, VFC } from "react";
+import { ComponentType, FC, SVGProps } from "react";
 import cls from "./Icon.module.scss";
 import { classNames } from 'shared/lib/classNames/classNames';
 
 interface IconProps {
   className?: string;
-  Svg:VFC<SVGProps<SVGSVGElement>>
+  Svg:ComponentType<SVGProps<SVGSVGElement>>
 }
 
 const Icon = ({ className , Svg}: IconProps) => {

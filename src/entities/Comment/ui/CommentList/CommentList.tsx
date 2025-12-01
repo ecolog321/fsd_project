@@ -26,7 +26,6 @@ const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
         comments.map((comment) => (
           <CommentCard
             isLoading={isLoading}
-            className={cls.comment}
             comment={comment}
             key={comment.id}
           />

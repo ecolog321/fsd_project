@@ -5,6 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "entities/User";
 import { SidebarItemType } from "../../model/types/items";
+import Icon from "shared/ui/Icon/Icon";
 
 interface SidebarItemProps {
   item: SidebarItemType;
@@ -21,7 +22,7 @@ const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
   
   return (
     <AppLink theme={AppLinkTheme.PRIMARY} className={classNames(cls.item, {[cls.collapsed]:collapsed})} to={item.path}>
-      <item.Icon className={cls.icon} />
+      <Icon Svg={item.Icon} className={cls.icon} />
       <span className={cls.link}> {t(item.text)}</span>
     </AppLink>
   );

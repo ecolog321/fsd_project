@@ -19,11 +19,31 @@ const ComponentMeta = {
 export default ComponentMeta;
 type Story = StoryObj<typeof ComponentMeta>;
 
+const defaultStoreState = {
+    user: {
+        authData: undefined,
+        _inited: true,
+    },
+};
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {
-    decorators:StoreDecorator({})
+    parameters: {
+        store: {
+            initialState:defaultStoreState
+        }
+    },
+    decorators:[StoreDecorator]
 };
 
 export const Dark: Story = {
-    decorators:[ThemeDecorator(Theme.DARK), StoreDecorator({})]
+    parameters: {
+        store: {
+            initialState:defaultStoreState
+        },
+        theme:Theme.DARK
+    },
+    decorators:[
+        ThemeDecorator, 
+        StoreDecorator]
 };

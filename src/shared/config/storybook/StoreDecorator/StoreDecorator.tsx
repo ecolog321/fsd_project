@@ -1,4 +1,4 @@
-import { StoryFn } from "@storybook/react-webpack5";
+import { Decorator } from "@storybook/react";
 import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/authByUsername/model/slice/loginSlice";
@@ -8,7 +8,7 @@ import { articleDetailsReducers } from "entities/Article/model/slice/articleDeta
 import { addCommentFormReducers } from "features/addCommentForm/model/slice/addCommentFormSlice";
 import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slice";
 
-const defualtReducers: ReducersList = {
+const defaultReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducers,
   articleDetails: articleDetailsReducers,
@@ -16,15 +16,15 @@ const defualtReducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
 
-export const StoreDecorator =
-  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
-  (StoryComponent: StoryFn) => {
-    return (
-      <StoreProvider
-        initialState={state as StateSchema}
-        asyncReducers={{ ...defualtReducers, ...asyncReducers }}
-      >
-        <StoryComponent />
-      </StoreProvider>
-    );
-  };
+export const StoreDecorator: Decorator = (Story, context) => {
+  const { initialState, asyncReducers } = context.parameters?.store || {};
+  
+  return (
+    <StoreProvider
+      initialState={initialState as StateSchema}
+      asyncReducers={{ ...defaultReducers, ...asyncReducers }}
+    >
+      <Story />
+    </StoreProvider>
+  );
+};

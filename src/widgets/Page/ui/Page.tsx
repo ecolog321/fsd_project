@@ -18,8 +18,8 @@ interface PageProps {
 }
 
 const Page = ({ className, children, onScrollEnd }: PageProps) => {
-  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const wrapperRef = useRef<HTMLDivElement>(null!);
+  const triggerRef = useRef<HTMLDivElement>(null!);
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const scrollPosition = useSelector((state: StateSchema) =>

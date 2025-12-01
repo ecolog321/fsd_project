@@ -17,6 +17,8 @@ import DynamicModuleLoader, {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useTranslation } from "react-i18next";
+import VStack from "shared/ui/Stack/VStack/VStack";
+import HStack from "shared/ui/Stack/HStack/HStack";
 
 export interface AddCommentFormProps {
   className?: string;
@@ -46,7 +48,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack max gap={'8'} className={classNames(cls.addCommentForm, {}, [className])}>
         <Input
           className={cls.input}
           placeholder="Введите текст комментария"
@@ -54,7 +56,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
           onChange={onCommentTextChange}
         />
         <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 };

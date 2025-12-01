@@ -4,13 +4,14 @@ import { AddCommentForm } from "features/addCommentForm";
 import { CommentList } from "entities/Comment";
 import VStack from "shared/ui/Stack/VStack/VStack";
 import { useSelector } from "react-redux";
-import { useCallback } from "react";
+import { Suspense, useCallback } from "react";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentSlice";
 import { getArticleCommentsIsLoading } from "pages/ArticleDetailsPage/model/selectors/comments";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId";
+import Loader from "shared/ui/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -36,9 +37,11 @@ const ArticleDetailsComments = ({
   });
 
   return (
-    <VStack gap="8" className={classNames("", {}, [className])}>
+    <VStack gap="8" max className={classNames("", {}, [className])}>
       <Text title={"Коментарии"} />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </VStack>
   );
