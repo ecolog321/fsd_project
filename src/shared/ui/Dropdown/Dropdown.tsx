@@ -40,7 +40,7 @@ export function Dropdown(props: DropdownProps) {
         {items.map((item, id) => {
           const content = ({ active }: { active: boolean }) => (
             <Button
-            disabled={item.disabled}
+              disabled={item.disabled}
               className={classNames(cls.item, { [cls.active]: active }, [])}
             >
               {item.content}

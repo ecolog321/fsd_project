@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode, UIEvent, useRef } from "react";
+import { ReactNode, UIEvent, useRef } from "react";
 import cls from "./Page.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInfinityScroll } from "shared/lib/hooks/useInfinityScroll";

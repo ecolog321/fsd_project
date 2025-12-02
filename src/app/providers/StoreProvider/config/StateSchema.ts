@@ -1,11 +1,10 @@
 import {
   Action,
-  AnyAction,
-  CombinedState,
   EnhancedStore,
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
+
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
 import { UserSchema } from "entities/User";
@@ -21,14 +20,14 @@ import { ScrollSaveSchema } from "widgets/Page";
 export interface StateSchema {
   user: UserSchema;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
-  loginForm?: LoginSchema;
-  profile?: ProfileSchema;
-  articleDetails?: ArticleDetailsSchema;
-  articleDetailsPage?: ArticleDetailsPageSchema;
-  addCommentForm?: AddCommentFormSchema;
-  articlesPage?: ArticlesPageSchema;
+  loginForm: LoginSchema;
+  profile: ProfileSchema;
+  articleDetails: ArticleDetailsSchema;
+  articleDetailsPage: ArticleDetailsPageSchema;
+  addCommentForm: AddCommentFormSchema;
+  articlesPage: ArticlesPageSchema;
   scrollSave: ScrollSaveSchema;
-  sortArticles?: SortArticlesSchema;
+  sortArticles: SortArticlesSchema;
 }
 
 export type ReducersStateSchema = Reducer<UserSchema, Action<string>> &
@@ -36,7 +35,7 @@ export type ReducersStateSchema = Reducer<UserSchema, Action<string>> &
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
-  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+  reduce: (state: StateSchema, action: any) => StateSchema;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 }

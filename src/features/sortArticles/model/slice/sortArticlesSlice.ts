@@ -8,9 +8,7 @@ import { Article, ArticleType} from "entities/Article";
 import { ArticleSortFeild, SortArticlesSchema, SortOrder } from "../types/sortArticles";
 
 
-const articlesAdapter = createEntityAdapter<Article>({
-  selectId: (article: Article) => article.id,
-});
+const articlesAdapter = createEntityAdapter<Article>();
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articlesAdapter.getInitialState()

@@ -1,10 +1,13 @@
+
 import { profileReducers } from "./model/slice/profileSlice";
 import ProfileCard from "./ui/ProfileCard/ProfileCard";
+import { ValidateProfileError } from "./model/consts/const";
 
-export {
+export type {
   Profile,
   ProfileSchema,
-  ValidateProfileError,
 } from "./model/types/profile";
+
+export {ValidateProfileError}
 
 export { profileReducers, ProfileCard };

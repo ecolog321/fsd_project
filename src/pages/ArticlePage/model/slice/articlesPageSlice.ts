@@ -9,9 +9,7 @@ import { ArticlesPageSchema } from "../types/articlesPageSchema";
 import { fetchArticlesList } from "../services/fetchArticlesList";
 import { ARTICLE_VIEW_KEY } from "shared/const/localstorage";
 
-const articlesAdapter = createEntityAdapter<Article>({
-  selectId: (article: Article) => article.id,
-});
+const articlesAdapter = createEntityAdapter<Article>();
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articlesAdapter.getInitialState()

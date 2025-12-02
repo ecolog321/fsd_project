@@ -17,7 +17,6 @@ import DynamicModuleLoader, {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useTranslation } from "react-i18next";
-import VStack from "shared/ui/Stack/VStack/VStack";
 import HStack from "shared/ui/Stack/HStack/HStack";
 
 export interface AddCommentFormProps {

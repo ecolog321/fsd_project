@@ -50,8 +50,8 @@ export default defineConfig([
       "react/display-name": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
       "ormina-plugin/path-cheker": "warn",
-      "i18n-ally.sortKeys": true,
-      "i18n-ally.keepFulfilled": true,
+      //"i180ally.so":['warn', true],
+      //"i18n-ally.keepFulfilled": ['warn', true],
     },
     settings: {
       react: {

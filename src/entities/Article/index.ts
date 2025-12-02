@@ -5,4 +5,6 @@ import {Article, ArticleView, ArticleType} from './model/types/article'
 import ArticleViewSelector from "./ui/ArticleViewSelector/ArticleViewSelector";
 
 export {getArticleDetailsData} from './model/selectors/articleDetails'
-export {ArticleDetails, Article,ArticleView, ArticleType, ArticleDetailsSchema, ArticleList, ArticleViewSelector}
+export {ArticleDetails, ArticleList, ArticleViewSelector}
+export {ArticleView, ArticleType}
+export type {Article, ArticleDetailsSchema}

@@ -1,7 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import { useParams } from "react-router-dom";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
@@ -17,7 +16,7 @@ import VStack from "shared/ui/Stack/VStack/VStack";
 import ProfilePageHeader from "../../ui/ProfilePageHeader/ProfilePageHeader";
 import Text from "shared/ui/Text/Text";
 import ProfileCard from "../ProfileCard/ProfileCard";
-import { ValidateProfileError } from "../../model/types/profile";
+import { ValidateProfileError } from "../../model/consts/const";
 
 export interface IEditableProfileCardProps {
   className?: string;

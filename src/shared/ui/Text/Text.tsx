@@ -52,15 +52,15 @@ const Text = memo(({
     <div className={classNames(cls.text, {}, [className, cls[theme], cls[aling], cls[size]])}>
       {title && (
         <HeaderTag 
-        data-testid={`${dataTestId}.Header`}
-        className={cls.title}>
+          data-testid={`${dataTestId}.Header`}
+          className={cls.title}>
           {title}
         </HeaderTag>
         )}
       {text && (
         <p 
-        data-testid={`${dataTestId}.Paragraph`}
-        className={cls.text}>
+          data-testid={`${dataTestId}.Paragraph`}
+          className={cls.text}>
           {text}
           </p>)}
     </div>

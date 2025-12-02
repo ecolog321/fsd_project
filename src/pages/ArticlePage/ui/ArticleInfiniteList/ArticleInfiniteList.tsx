@@ -5,8 +5,8 @@ import {
   getArticlesPageInited,
   getArticlesPageIsLoading,
   getArticlesPageView,
-} from "pages/ArticlePage/model/selectors/articlesPageSelectors";
-import { initArticlesPage } from "pages/ArticlePage/model/services/initArticlesPage";
+} from '../../model/selectors/articlesPageSelectors'
+import { initArticlesPage } from "../../model/services/initArticlesPage";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
@@ -37,11 +37,11 @@ const ArticleInfiniteList = ({ className }: ArticleInfiniteListProps) => {
   }
 
   return (
-      <ArticleList
-        isLoading={isLoading}
-        articles={articles}
-        view={view}
-        className={className}
+    <ArticleList
+      isLoading={isLoading}
+      articles={articles}
+      view={view}
+      className={className}
       />
   );
 };

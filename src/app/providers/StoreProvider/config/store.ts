@@ -16,11 +16,11 @@ export function createReduxStore(
 
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
-    ...asyncReducers,
     user: userReducers,
     scrollSave:scrollSaveReducers,
-    [rtkApi.reducerPath]:rtkApi.reducer
-  };
+    [rtkApi.reducerPath]:rtkApi.reducer,
+    ...asyncReducers
+  } as ReducersMapObject<StateSchema>;
 
   const reducerManager = createReducerManager(rootReducers);
 

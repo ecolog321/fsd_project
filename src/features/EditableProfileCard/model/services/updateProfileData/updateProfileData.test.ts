@@ -4,8 +4,8 @@ import {
 } from "shared/lib/tests/TestAsyncThink/TestAsyncThunk";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { ValidateProfileError } from "../../types/profile";
 import { updateProfileData } from "./updateProfileData";
+import { ValidateProfileError } from "../../consts/const";
 
 const data = {
   username: "admin",

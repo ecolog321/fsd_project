@@ -6,7 +6,7 @@ import VStack from "shared/ui/Stack/VStack/VStack";
 import { useSelector } from "react-redux";
 import { Suspense, useCallback } from "react";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentSlice";
-import { getArticleCommentsIsLoading } from "pages/ArticleDetailsPage/model/selectors/comments";
+import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";

@@ -3,4 +3,5 @@ import {createReduxStore, AppDispatch} from "./config/store";
 import type {StateSchema} from './config/StateSchema'
 import { ReduxStoreWithManager, ThunkExtraArg, ThunkConfig } from "./config/StateSchema";
 
-export {StoreProvider, createReduxStore, AppDispatch, StateSchema, ReduxStoreWithManager, ThunkExtraArg, ThunkConfig}
+export {StoreProvider, createReduxStore, StateSchema}
+export type {AppDispatch, ReduxStoreWithManager, ThunkConfig, ThunkExtraArg}

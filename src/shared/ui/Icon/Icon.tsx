@@ -1,4 +1,4 @@
-import { ComponentType, FC, SVGProps } from "react";
+import { ComponentType, SVGProps } from "react";
 import cls from "./Icon.module.scss";
 import { classNames } from 'shared/lib/classNames/classNames';
 
