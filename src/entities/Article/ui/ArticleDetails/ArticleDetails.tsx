@@ -20,8 +20,7 @@ import EyeIcon from "shared/assets/icons/eye.svg";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
 import Icon from "shared/ui/Icon/Icon";
 import {
-  ArticleBlock,
-  ArticleBlockType,
+  ArticleBlock
 } from "../../model/types/article";
 import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
@@ -29,6 +28,7 @@ import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextB
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import HStack from "shared/ui/Stack/HStack/HStack";
 import VStack from "shared/ui/Stack/VStack/VStack";
+import { ArticleBlockType } from "../../model/consts/const";
 
 interface ArticleDetailsProps {
   className?: string;

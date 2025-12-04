@@ -1,4 +1,5 @@
 import { StateSchema } from "app/providers/StoreProvider";
+import { ArticleType } from "entities/Article";
 
 export const getArticlesPageIsLoading = (state: StateSchema) =>
   state.articlesPage?.isLoading;
@@ -14,3 +15,7 @@ export const getArticlesPageHasMore = (state: StateSchema) =>
   state.articlesPage?.hasMore;
 export const getArticlesPageInited = (state: StateSchema) =>
   state.articlesPage?._inited;
+export const getOrderArticles = (state:StateSchema)=>state.sortArticles?.order
+export const getSortArticles = (state:StateSchema)=>state.sortArticles?.sort
+export const getSearchArticles = (state:StateSchema)=>state.sortArticles?.search
+export const getTypeArticles = (state:StateSchema)=>state.sortArticles?.type ?? ArticleType.ALL

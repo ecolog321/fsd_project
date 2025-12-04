@@ -9,7 +9,7 @@ import { getProfileError } from "../../model/selectors/getProfileError/getProfil
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 import { fetchProfileData } from "../../model/services/fetchUserProfileData/fetchUserProfileData";
-import { profileActions } from "../../model/slice/profileSlice";
+import { profileActions, profileReducers } from "../../model/slice/profileSlice";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import VStack from "shared/ui/Stack/VStack/VStack";
@@ -17,10 +17,13 @@ import ProfilePageHeader from "../../ui/ProfilePageHeader/ProfilePageHeader";
 import Text from "shared/ui/Text/Text";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import { ValidateProfileError } from "../../model/consts/const";
+import DynamicModuleLoader, {
+  ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 export interface IEditableProfileCardProps {
   className?: string;
-  id:string;
+  id: string;
 }
 
 const EditableProfileCard: FC<IEditableProfileCardProps> = memo(
@@ -49,6 +52,10 @@ const EditableProfileCard: FC<IEditableProfileCardProps> = memo(
         dispatch(fetchProfileData(id));
       }
     });
+
+    const initialReducers: ReducersList = {
+      profile:profileReducers ,
+    };
 
     const onChangeFirstname = useCallback(
       (value?: string) => {
@@ -101,27 +108,33 @@ const EditableProfileCard: FC<IEditableProfileCardProps> = memo(
       [dispatch]
     );
     return (
-      <VStack className={className} gap={"16"} max>
-        <ProfilePageHeader />
-        {validateErrors?.length &&
-          validateErrors.map((error) => (
-            <Text data-testid={'EditableProfileCard.Error'} text={validateErrorTranslates[error]} key={error} />
-          ))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFistname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
-      </VStack>
+      <DynamicModuleLoader reducers={initialReducers}>
+        <VStack className={className} gap={"16"} max>
+          <ProfilePageHeader />
+          {validateErrors?.length &&
+            validateErrors.map((error) => (
+              <Text
+                data-testid={"EditableProfileCard.Error"}
+                text={validateErrorTranslates[error]}
+                key={error}
+              />
+            ))}
+          <ProfileCard
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+            onChangeFistname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+          />
+        </VStack>
+      </DynamicModuleLoader>
     );
   }
 );

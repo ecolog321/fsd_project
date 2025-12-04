@@ -27,7 +27,7 @@ const ArticleRecommendationsList: FC<IArticleRecommendationsListProps> = memo(
         gap="8"
         className={classNames(cls.articleRecommendationsList, {}, [className])}
       >
-        <Text className={cls.title} title={"Рекомендации"} />
+        <Text className={cls.title} title={t("Рекомендации")} />
         <ArticleList
           articles={articles}
           isLoading={isLoading}

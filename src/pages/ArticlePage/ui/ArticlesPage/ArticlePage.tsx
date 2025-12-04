@@ -9,7 +9,6 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage";
 import { Page } from "widgets/Page";
 import { ArticlesPageFilters } from "features/sortArticles";
-import { useTranslation } from "react-i18next";
 import ArticleInfiniteList from "../ArticleInfiniteList/ArticleInfiniteList";
 
 interface ArticlePageProps {
@@ -21,7 +20,6 @@ const reducers = {
 };
 
 const ArticlePage = ({ className }: ArticlePageProps) => {
-  const { t } = useTranslation("article");
   const dispatch = useAppDispatch();
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
