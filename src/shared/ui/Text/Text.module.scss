@@ -8,6 +8,7 @@
   color: var(--secondary-color);
 }
 
+// Тема ошибки
 .error {
   .title {
     color: var(--red-light);
@@ -18,29 +19,44 @@
   }
 }
 
+// Выравнивание
 .left {
-  text-align: left;
+  .title,
+  .text {
+    text-align: left;
+  }
 }
 
 .right {
-  text-align: right;
+  .title,
+  .text {
+    text-align: right;
+  }
 }
 
 .center {
-  text-align: center;
+  .title,
+  .text {
+    text-align: center;
+  }
 }
 
+// Размеры - теперь это отдельные классы, которые можно использовать
 .size_s {
+  // Стили для контейнера размера S (если нужны)
+  
   .title {
     font: var(--font-s);
   }
 
   .text {
-    font: var(--font-m);
+    font: var(--font-s);
   }
 }
 
 .size_m {
+  // Стили для контейнера размера M (если нужны)
+  
   .title {
     font: var(--font-l);
   }
@@ -50,8 +66,9 @@
   }
 }
 
-
 .size_l {
+  // Стили для контейнера размера L (если нужны)
+  
   .title {
     font: var(--font-xl);
   }

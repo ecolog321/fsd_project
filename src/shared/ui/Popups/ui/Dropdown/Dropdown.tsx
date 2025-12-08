@@ -1,12 +1,14 @@
-import { Menu } from "@headlessui/react";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import cls from "./Dropdown.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import {  ReactNode } from "react";
 import { DropdownDirection } from "shared/types/ui";
-
-import AppLink from "../AppLink/AppLink";
 import { To } from "react-router-dom";
-import Button from "../Button/Button";
+import Button from "../../../Button/Button";
+import AppLink from "../../../AppLink/AppLink";
+import { mapDirectionClass } from "../../styles/consts";
+import popupCls from '../../styles/popups.module.scss'
+
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -15,12 +17,7 @@ export interface DropdownItem {
   href?: string;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  "bottom left": cls.optionsBottomLeft,
-  "bottom right": cls.optionsBottomRight,
-  "top left": cls.optionTopLeft,
-  "top right": cls.optionTopRight,
-};
+
 
 interface DropdownProps {
   className?: string;
@@ -34,14 +31,14 @@ export function Dropdown(props: DropdownProps) {
   const itemsClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.dropdown, {}, [className])}>
-      <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
-      <Menu.Items className={classNames(cls.items, {}, itemsClasses)}>
+    <Menu as="div" className={classNames(cls.dropdown, {}, [className, popupCls.popup])}>
+      <MenuButton className={popupCls.trigger}>{trigger}</MenuButton>
+      <MenuItems className={classNames(cls.items, {}, itemsClasses)}>
         {items.map((item, id) => {
           const content = ({ active }: { active: boolean }) => (
             <Button
               disabled={item.disabled}
-              className={classNames(cls.item, { [cls.active]: active }, [])}
+              className={classNames(cls.item, { [popupCls.active]: active }, [])}
             >
               {item.content}
             </Button>
@@ -49,18 +46,18 @@ export function Dropdown(props: DropdownProps) {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href as To} key={id}>
+              <MenuItem as={AppLink} to={item.href as To} key={id}>
                 {content}
-              </Menu.Item>
+              </MenuItem>
             );
           }
           return (
-            <Menu.Item as={'button'} style={{width:'100%', border:'none'}} onClick={item.onCLick} key={id}>
+            <MenuItem as={'button'} style={{width:'100%', border:'none'}} onClick={item.onCLick} key={id}>
               {content}
-            </Menu.Item>
+            </MenuItem>
           );
         })}
-      </Menu.Items>
+      </MenuItems>
     </Menu>
   );
 }

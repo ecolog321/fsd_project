@@ -68,7 +68,7 @@ const ProfileCard = ({
           theme={TextTheme.ERROR}
           title={t("Произошла ошибка")}
           text={t("Попробуйте обновить страницу")}
-          aling={TextAlign.CENTER}
+          align={TextAlign.CENTER}
         />
       </HStack>
     );

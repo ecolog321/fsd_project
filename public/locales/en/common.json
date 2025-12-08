@@ -18,5 +18,6 @@
     "Город":"City",
     "Страна":"Country",
     "Валюта":"Currency",
-    "Никнэйм":"Username"
+    "Никнэйм":"Username",
+    "Уведомления": "Notifications"
 }

@@ -2,16 +2,17 @@ import { Listbox as HListbox, ListboxButton as HListboxButton, ListboxOption, Li
 import cls from "./Listbox.module.scss";
 import { Fragment, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import Button from "../Button/Button";
-import HStack from "../Stack/HStack/HStack";
+import Button from "../../../Button/Button";
+import HStack from "../../../Stack/HStack/HStack";
 import { DropdownDirection } from "shared/types/ui";
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popups.module.scss'
 
 export interface ListboxItem {
   value?: string;
   content: ReactNode;
   disabled?: boolean;
 }
-
 
 
 interface ListboxProps {
@@ -24,13 +25,6 @@ interface ListboxProps {
   direction?: DropdownDirection;
   onChange: <T extends string>(value: T) => void;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionTopLeft,
-  'top right': cls.optionTopRight,
-};
 
 export function Listbox(props: ListboxProps) {
   const {
@@ -52,11 +46,11 @@ export function Listbox(props: ListboxProps) {
       <HListbox
         as={"div"}
         disabled={readonly}
-        className={classNames(cls.listbox, {}, [className])}
+        className={classNames(cls.listbox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}
       >
-        <HListboxButton disabled={readonly} className={cls.triggerBtn}>
+        <HListboxButton disabled={readonly} className={popupCls.trigger}>
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListboxButton>
         <ListboxOptions
@@ -69,14 +63,14 @@ export function Listbox(props: ListboxProps) {
               disabled={item.disabled}
               as={Fragment}
             >
-              {({ active, selected }) => (
+              {({ selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: active,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.active]: selected,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
-                  {selected && "!!!!"}
+                  {selected && "!"}
                   {item.content}
                 </li>
               )}

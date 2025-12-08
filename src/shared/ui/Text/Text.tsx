@@ -3,7 +3,7 @@ import cls from "./Text.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 
 export const enum TextTheme {
-  PRIMATY = "primary",
+  PRIMARY = "primary",
   ERROR = "error",
 }
 
@@ -13,9 +13,9 @@ export enum TextAlign {
   CENTER = 'center'
 }
 export enum TextSize {
-  S = 'size_s',
-  M = 'size_m',
-  L = 'size_l'
+  S = 'sizeS',
+  M = 'sizeM',
+  L = 'sizeL'
 }
 
 interface TextProps {
@@ -23,7 +23,7 @@ interface TextProps {
   title?: string;
   text?: string;
   theme?: TextTheme;
-  aling?:TextAlign;
+  align?:TextAlign;
   size?:TextSize;
   'data-testid'?:string;
 }
@@ -40,8 +40,8 @@ const Text = memo(({
   className,
   title,
   text,
-  theme = TextTheme.PRIMATY,
-  aling = TextAlign.LEFT,
+  theme = TextTheme.PRIMARY,
+  align = TextAlign.LEFT,
   size = TextSize.M,
   "data-testid":dataTestId = "Text"
 }: TextProps) => {
@@ -49,7 +49,7 @@ const Text = memo(({
   const HeaderTag = mapSizeToHeaderTag[size] 
 
   return (
-    <div className={classNames(cls.text, {}, [className, cls[theme], cls[aling], cls[size]])}>
+    <div className={classNames(cls.container, {}, [className, cls[theme], cls[align], cls[size]])}>
       {title && (
         <HeaderTag 
           data-testid={`${dataTestId}.Header`}

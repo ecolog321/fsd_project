@@ -4,12 +4,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 interface IconProps {
   className?: string;
-  Svg:ComponentType<SVGProps<SVGSVGElement>>
+  Svg:ComponentType<SVGProps<SVGSVGElement>>;
+  inverted?:boolean;
 }
 
-const Icon = ({ className , Svg}: IconProps) => {
+const Icon = ({ className , Svg, inverted}: IconProps) => {
   return (
-    <Svg className={classNames(cls.icon, {}, [className])}>
+    <Svg className={classNames(inverted ? cls.inverted : cls.icon , {}, [className])}>
       
     </Svg>
   );

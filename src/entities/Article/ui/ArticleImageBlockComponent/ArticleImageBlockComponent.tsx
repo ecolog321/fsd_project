@@ -14,7 +14,7 @@ const ArticleImageBlockComponent = memo(({ className, block }: ArticleImageBlock
     <div className={classNames(cls.articleImageBlockComponent, {}, [className])}>
       <img src={block.src} className={cls.img} alt={block.title}/>
       {block.title && (
-        <Text text={block.title} aling={TextAlign.CENTER}/>
+        <Text text={block.title} align={TextAlign.CENTER}/>
       )}
     </div>
   );

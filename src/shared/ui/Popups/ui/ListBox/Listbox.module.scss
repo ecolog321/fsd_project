@@ -1,0 +1,16 @@
+
+
+.options {
+  min-width: 100%;
+  padding-top: 5px;
+  background: var(--listbox-bg);
+  position: absolute;
+  z-index: 500;
+  border-radius: 10px;
+  box-shadow: 4px 4 px 8px var(--listbox-bg);
+}
+
+.item {
+  padding: 10px 20px;
+}
+

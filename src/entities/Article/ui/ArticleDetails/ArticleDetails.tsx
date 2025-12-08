@@ -105,7 +105,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       <Text
         title={"Произошла ошибка загрузки статьи"}
         theme={TextTheme.ERROR}
-        aling={TextAlign.CENTER}
+        align={TextAlign.CENTER}
       />
     </div>;
   } else {
