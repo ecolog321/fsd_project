@@ -29,9 +29,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthodal(true);
   }, []);
 
-
   if (authData) {
-
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
         <Text className={cls.logo} title="Ormina" theme={TextTheme.PRIMARY} />
@@ -44,8 +42,8 @@ const Navbar = memo(({ className }: NavbarProps) => {
             {t("Создать статью")}
           </AppLink>
           <HStack gap={"16"} className={cls.actions}>
-            <NotificationButton/>
-            <AvatarDropdown/>
+            <NotificationButton />
+            <AvatarDropdown />
           </HStack>
         </HStack>
       </header>
