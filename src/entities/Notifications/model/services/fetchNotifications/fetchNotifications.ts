@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import i18next from 'i18next';
 
 interface INotificationsProps {
@@ -11,7 +11,7 @@ export const fetchNotifications = createAsyncThunk<
  INotificationsProps,
  ThunkConfig<string>
 >('***/notifications', async (_, thunkApi) => {
- const { dispatch, extra, rejectWithValue, getState } = thunkApi;
+ const { extra, rejectWithValue } = thunkApi;
 
  try {
  const response = await extra.api.post<any>('/***', {});

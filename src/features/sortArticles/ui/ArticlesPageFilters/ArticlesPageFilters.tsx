@@ -1,11 +1,11 @@
-import { ArticleType, ArticleView, ArticleViewSelector } from "entities/Article";
+import { ArticleType, ArticleView, ArticleViewSelector } from "@/entities/Article";
 import cls from "./ArticlesPageFilters.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useCallback, useMemo } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
-import Card from "shared/ui/Card/Card";
-import Input from "shared/ui/Input/Input";
+import Card from "@/shared/ui/Card/Card";
+import Input from "@/shared/ui/Input/Input";
 import ArticleSortSelector from "../ArticleSortSelector/ArticleSortSelector";
 import {
   getOrderArticles,
@@ -20,12 +20,12 @@ import {
 import { ArticleSortFeild, SortOrder } from "../../model/types/sortArticles";
 import DynamicModuleLoader, {
   ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articlesPageActions } from "pages/ArticlePage/model/slice/articlesPageSlice";
-import { getArticlesPageView } from "pages/ArticlePage/model/selectors/articlesPageSelectors";
-import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticlesList";
-import { useDebounce } from "shared/lib/hooks/useDebounce";
-import Tabs, { TabItem } from "shared/ui/Tabs/Tabs";
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { articlesPageActions } from "@/pages/ArticlePage/model/slice/articlesPageSlice";
+import { getArticlesPageView } from "@/pages/ArticlePage/model/selectors/articlesPageSelectors";
+import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList";
+import { useDebounce } from "@/shared/lib/hooks/useDebounce";
+import Tabs, { TabItem } from "@/shared/ui/Tabs/Tabs";
 
 interface ArticlesPageFiltersProps {
   className?: string;

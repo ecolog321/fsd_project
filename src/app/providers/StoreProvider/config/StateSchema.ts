@@ -7,16 +7,16 @@ import {
 
 
 import { AxiosInstance } from "axios";
-import { ArticleDetailsSchema } from "entities/Article";
-import { UserSchema } from "entities/User";
-import { AddCommentFormSchema } from "features/addCommentForm";
-import { LoginSchema } from "features/authByUsername";
-import { ProfileSchema } from "features/editableProfileCard";
-import { SortArticlesSchema } from "features/sortArticles/model/types/sortArticles";
-import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
-import { ArticlesPageSchema } from "pages/ArticlePage";
-import { rtkApi } from "shared/api/rtkApi";
-import { ScrollSaveSchema } from "widgets/Page";
+import { ArticleDetailsSchema } from "@/entities/Article";
+import { UserSchema } from "@/entities/User";
+import { AddCommentFormSchema } from "@/features/addCommentForm";
+import { LoginSchema } from "@/features/authByUsername";
+import { ProfileSchema } from "@/features/editableProfileCard";
+import { SortArticlesSchema } from "@/features/sortArticles/model/types/sortArticles";
+import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
+import { ArticlesPageSchema } from "@/pages/ArticlePage";
+import { rtkApi } from "@/shared/api/rtkApi";
+import { ScrollSaveSchema } from "@/widgets/Page";
 
 export interface StateSchema {
   user: UserSchema;

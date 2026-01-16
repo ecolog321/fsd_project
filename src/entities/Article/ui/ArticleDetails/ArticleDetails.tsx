@@ -1,11 +1,11 @@
 import DynamicModuleLoader, {
   ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import cls from "./ArticleDetails.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { articleDetailsReducers } from "../../model/slice/articleDetailsSlice";
 import { memo, useCallback } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { useSelector } from "react-redux";
 import {
@@ -13,21 +13,21 @@ import {
   getArticleDetailsError,
   getArticleDetailsisLoading,
 } from "../../model/selectors/articleDetails";
-import Text, { TextAlign, TextSize, TextTheme } from "shared/ui/Text/Text";
-import Skeleton from "shared/ui/Skeleton/Skeleton";
-import Avatar from "shared/ui/Avatar/Avatar";
-import EyeIcon from "shared/assets/icons/eye.svg";
-import CalendarIcon from "shared/assets/icons/calendar.svg";
-import Icon from "shared/ui/Icon/Icon";
+import Text, { TextAlign, TextSize, TextTheme } from "@/shared/ui/Text/Text";
+import Skeleton from "@/shared/ui/Skeleton/Skeleton";
+import Avatar from "@/shared/ui/Avatar/Avatar";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
+import CalendarIcon from "@/shared/assets/icons/calendar.svg";
+import Icon from "@/shared/ui/Icon/Icon";
 import {
   ArticleBlock
 } from "../../model/types/article";
 import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import HStack from "shared/ui/Stack/HStack/HStack";
-import VStack from "shared/ui/Stack/VStack/VStack";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
+import HStack from "@/shared/ui/Stack/HStack/HStack";
+import VStack from "@/shared/ui/Stack/VStack/VStack";
 import { ArticleBlockType } from "../../model/consts/const";
 
 interface ArticleDetailsProps {

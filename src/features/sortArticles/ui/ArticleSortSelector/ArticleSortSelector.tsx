@@ -1,6 +1,6 @@
-import Select, { SelectOptions } from "shared/ui/Select/Select";
+import Select, { SelectOptions } from "@/shared/ui/Select/Select";
 import cls from "./ArticleSortSelector.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useMemo } from "react";
 import {
   ArticleSortFeild,

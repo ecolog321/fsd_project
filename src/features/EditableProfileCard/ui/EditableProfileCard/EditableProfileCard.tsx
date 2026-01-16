@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileLoading } from "../../model/selectors/getProfileLoading/getProfileLoading";
@@ -10,16 +10,16 @@ import { getProfileValidateErrors } from "../../model/selectors/getProfileValida
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 import { fetchProfileData } from "../../model/services/fetchUserProfileData/fetchUserProfileData";
 import { profileActions, profileReducers } from "../../model/slice/profileSlice";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
-import VStack from "shared/ui/Stack/VStack/VStack";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
+import VStack from "@/shared/ui/Stack/VStack/VStack";
 import ProfilePageHeader from "../../ui/ProfilePageHeader/ProfilePageHeader";
-import Text from "shared/ui/Text/Text";
+import Text from "@/shared/ui/Text/Text";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import { ValidateProfileError } from "../../model/consts/const";
 import DynamicModuleLoader, {
   ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 export interface IEditableProfileCardProps {
   className?: string;

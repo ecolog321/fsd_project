@@ -3,11 +3,11 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { StateSchema } from "./StateSchema";
-import { userReducers } from "entities/User";
+import { userReducers } from "@/entities/User";
 import { createReducerManager } from "./reducerManager";
-import { getApi } from "shared/api/api";
-import { scrollSaveReducers } from "widgets/Page";
-import { rtkApi } from "shared/api/rtkApi";
+import { getApi } from "@/shared/api/api";
+import { scrollSaveReducers } from "@/widgets/Page";
+import { rtkApi } from "@/shared/api/rtkApi";
 
 
 export function createReduxStore(

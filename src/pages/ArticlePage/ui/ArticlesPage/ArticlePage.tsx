@@ -1,14 +1,14 @@
 import { memo, useCallback } from "react";
 import cls from "./ArticlePage.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   articlesPageReducers,
 } from "../../model/slice/articlesPageSlice";
-import DynamicModuleLoader from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import DynamicModuleLoader from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage";
-import { Page } from "widgets/Page";
-import { ArticlesPageFilters } from "features/sortArticles";
+import { Page } from "@/widgets/Page";
+import { ArticlesPageFilters } from "@/features/sortArticles";
 import ArticleInfiniteList from "../ArticleInfiniteList/ArticleInfiniteList";
 
 interface ArticlePageProps {

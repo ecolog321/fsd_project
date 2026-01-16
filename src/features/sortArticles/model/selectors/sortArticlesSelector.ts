@@ -1,5 +1,5 @@
-import { StateSchema } from "app/providers/StoreProvider";
-import { ArticleType } from "entities/Article";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { ArticleType } from "@/entities/Article";
 
 export const getOrderArticles = (state:StateSchema)=>state.sortArticles?.order
 export const getSortArticles = (state:StateSchema)=>state.sortArticles?.sort

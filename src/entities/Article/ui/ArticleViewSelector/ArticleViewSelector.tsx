@@ -1,10 +1,10 @@
 
 import cls from "./ArticleViewSelector.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import ListIcon from "shared/assets/icons/list.svg";
-import PlateIcon from "shared/assets/icons/plate.svg";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
-import Icon from "shared/ui/Icon/Icon";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import ListIcon from "@/shared/assets/icons/list.svg";
+import PlateIcon from "@/shared/assets/icons/plate.svg";
+import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
+import Icon from "@/shared/ui/Icon/Icon";
 import { ArticleView } from "../../model/consts/const";
 
 interface ArticleViewSelectorProps {

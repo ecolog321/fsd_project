@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-webpack5";
 import ProfileCard from "./ProfileCard";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import Avatar from "shared/assets/tests/leo.jpeg";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import Avatar from "@/shared/assets/tests/leo.jpeg";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const ComponentMeta = {

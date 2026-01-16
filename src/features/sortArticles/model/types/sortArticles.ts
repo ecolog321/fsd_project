@@ -1,6 +1,6 @@
 
 import { EntityState } from "@reduxjs/toolkit";
-import { Article, ArticleType} from "entities/Article";
+import { Article, ArticleType} from "@/entities/Article";
 
 
 export interface SortArticlesSchema extends EntityState<Article, string> {

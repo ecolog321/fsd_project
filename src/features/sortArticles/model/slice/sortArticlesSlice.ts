@@ -3,8 +3,8 @@ import {
   createSlice,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { StateSchema } from "app/providers/StoreProvider";
-import { Article, ArticleType} from "entities/Article";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Article, ArticleType} from "@/entities/Article";
 import { ArticleSortFeild, SortArticlesSchema, SortOrder } from "../types/sortArticles";
 
 

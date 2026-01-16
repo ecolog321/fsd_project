@@ -1,8 +1,8 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import cls from "./Dropdown.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {  ReactNode } from "react";
-import { DropdownDirection } from "shared/types/ui";
+import { DropdownDirection } from "@/shared/types/ui";
 import { To } from "react-router-dom";
 import Button from "../../../Button/Button";
 import AppLink from "../../../AppLink/AppLink";

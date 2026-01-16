@@ -1,7 +1,7 @@
-import { Country } from "entities/Country";
+import { Country } from "@/entities/Country";
 import { ProfileSchema } from "../types/profile";
 import { profileActions, profileReducers } from "./profileSlice";
-import { Currency } from "entities/Currency";
+import { Currency } from "@/entities/Currency";
 
 const data = {
   username: "admin",

@@ -1,9 +1,9 @@
 import {
   ActionCreatorType,
   TestAsyncThunk,
-} from "shared/lib/tests/TestAsyncThink/TestAsyncThunk";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
+} from "@/shared/lib/tests/TestAsyncThink/TestAsyncThunk";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 import { updateProfileData } from "./updateProfileData";
 import { ValidateProfileError } from "../../consts/const";
 

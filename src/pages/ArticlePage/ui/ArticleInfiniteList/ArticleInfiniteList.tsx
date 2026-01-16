@@ -1,5 +1,5 @@
-import { ArticleList } from "entities/Article";
-import { getArticles } from "features/sortArticles/model/slice/sortArticlesSlice";
+import { ArticleList } from "@/entities/Article";
+import { getArticles } from "@/features/sortArticles/model/slice/sortArticlesSlice";
 import {
   getArticlesPageError,
   getArticlesPageInited,
@@ -10,8 +10,8 @@ import { initArticlesPage } from "../../model/services/initArticlesPage";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import Text from "shared/ui/Text/Text";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import Text from "@/shared/ui/Text/Text";
 
 interface ArticleInfiniteListProps {
   className?: string;

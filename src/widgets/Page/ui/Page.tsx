@@ -1,14 +1,14 @@
 import { ReactNode, UIEvent, useRef } from "react";
 import cls from "./Page.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { useInfinityScroll } from "shared/lib/hooks/useInfinityScroll";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useInfinityScroll } from "@/shared/lib/hooks/useInfinityScroll";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getScrollByPath } from "../model/selectors/scrollSaveSeletors";
-import { StateSchema } from "app/providers/StoreProvider";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import { useThrottle } from "shared/lib/hooks/useThrottle";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle";
 import { scrollSaveActions } from "../model/slices/scrollSaveSlice";
 
 interface PageProps {

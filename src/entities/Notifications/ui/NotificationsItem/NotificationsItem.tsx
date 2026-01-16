@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./NotificationsItem.module.scss";
 import { Notification } from "../../model/types/notifications";
-import Card, { CardTheme } from "shared/ui/Card/Card";
-import Text, { TextSize } from "shared/ui/Text/Text";
+import Card, { CardTheme } from "@/shared/ui/Card/Card";
+import Text, { TextSize } from "@/shared/ui/Text/Text";
 
 export interface INotificationsItemProps {
   className?: string;

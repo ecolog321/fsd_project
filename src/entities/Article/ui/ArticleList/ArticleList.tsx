@@ -3,7 +3,7 @@ import { Article } from "../../model/types/article";
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
 import ArticleListItemSkeleton from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleView } from "../../model/consts/const";
 
 interface ArticleListProps {

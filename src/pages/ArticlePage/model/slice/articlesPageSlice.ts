@@ -3,11 +3,11 @@ import {
   createSlice,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { StateSchema } from "app/providers/StoreProvider";
-import { Article, ArticleView } from "entities/Article";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Article, ArticleView } from "@/entities/Article";
 import { ArticlesPageSchema } from "../types/articlesPageSchema";
 import { fetchArticlesList } from "../services/fetchArticlesList";
-import { ARTICLE_VIEW_KEY } from "shared/const/localstorage";
+import { ARTICLE_VIEW_KEY } from "@/shared/const/localstorage";
 
 const articlesAdapter = createEntityAdapter<Article>();
 

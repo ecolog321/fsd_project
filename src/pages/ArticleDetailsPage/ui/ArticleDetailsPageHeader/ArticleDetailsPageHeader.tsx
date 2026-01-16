@@ -1,14 +1,14 @@
-import Button from "shared/ui/Button/Button";
+import Button from "@/shared/ui/Button/Button";
 import cls from "./ArticleDetailsPageHeader.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 import { useSelector } from "react-redux";
 import { getCanEditArticle } from "../../model/selectors/article";
-import { getArticleDetailsData } from "entities/Article";
+import { getArticleDetailsData } from "@/entities/Article";
 import { useTranslation } from "react-i18next";
-import HStack from "shared/ui/Stack/HStack/HStack";
+import HStack from "@/shared/ui/Stack/HStack/HStack";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

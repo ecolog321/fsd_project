@@ -1,7 +1,7 @@
-import { ActionCreatorType, TestAsyncThunk } from "shared/lib/tests/TestAsyncThink/TestAsyncThunk";
+import { ActionCreatorType, TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThink/TestAsyncThunk";
 import { fetchProfileData } from "./fetchUserProfileData";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 
 const data = {
   username: "admin",
