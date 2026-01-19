@@ -1,10 +1,13 @@
-import { memo, ReactNode, useCallback, useEffect } from "react";
+import { ReactNode, useCallback, useEffect } from "react";
 import cls from "./Drawer.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTheme } from "@/app/providers/ThemeProvider";
 import { Portal } from "@headlessui/react";
 import { Overlay } from "../Overlay/Overlay";
-import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from "@/shared/lib/components/AnimationProvider";
 
 interface DrawerProps {
   className?: string;
@@ -22,7 +25,7 @@ export const DrawerContent = ({
   isOpen,
   onClose,
 }: DrawerProps) => {
-  const {Spring, Gesture}=useAnimationLibs()
+  const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
   const { theme } = useTheme();
 
@@ -54,7 +57,7 @@ export const DrawerContent = ({
       cancel,
     }) => {
       if (my < -70) cancel();
-      
+
       if (last) {
         if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
           close();
@@ -79,15 +82,6 @@ export const DrawerContent = ({
 
   const display = y.to((py) => (py < height ? "block" : "none"));
 
-  /* const mods: Mods = {
-    [cls.opened]: isOpen,
-    [cls.isClosing]: isClosing,
-  };
-
-  if (lazy && !isMounted) {
-    return null;
-  } */
-
   return (
     <Portal>
       <div
@@ -107,13 +101,21 @@ export const DrawerContent = ({
   );
 };
 
-
-export const Drawer = memo((props:DrawerProps)=>{
-  const {isLoaded}=useAnimationLibs();
+const DrawerAsync = (props: DrawerProps) => {
+  const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
     return null;
   }
 
-  return <DrawerContent {...props}/>
-})
+  return <DrawerContent {...props} />;
+};
+
+export const Drawer = (props: DrawerProps) => {
+
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};
