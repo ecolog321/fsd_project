@@ -1,4 +1,4 @@
-import cls from "./ProfilePage.module.scss";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Page } from "@/widgets/Page";
 import EditableProfileCard from "@/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard";
@@ -15,7 +15,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return <Text text={`Профиль не найден`} />;
   }
   return (
-    <Page className={classNames(cls.ProfilePage, {}, [className])}>
+    <Page className={classNames('', {}, [className])}>
       <EditableProfileCard id={id} />
     </Page>
   );

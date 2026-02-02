@@ -1,6 +1,5 @@
 import Text from "@/shared/ui/Text/Text";
 import { Comment } from "../../model/types/comment";
-import cls from "./CommentList.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import CommentCard from "../CommentCard/CommentCard";
 import VStack from "@/shared/ui/Stack/VStack/VStack";
@@ -14,14 +13,14 @@ interface CommentListProps {
 const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
 
   if (isLoading) {
-    <VStack gap={'16'} className={classNames(cls.commentList, {}, [className])}>
+    <VStack gap={'16'} className={classNames('', {}, [className])}>
       <CommentCard isLoading />
       <CommentCard isLoading />
       <CommentCard isLoading />
     </VStack>
   }
   return (
-    <VStack max gap={'16'} className={classNames(cls.commentList, {}, [className])}>
+    <VStack max gap={'16'} className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
           <CommentCard

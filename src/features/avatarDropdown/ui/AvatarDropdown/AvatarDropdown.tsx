@@ -1,5 +1,4 @@
 import { Dropdown } from "@/shared/ui/Popups";
-import cls from "./AvatarDropdown.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
@@ -27,7 +26,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
   }
     return (
       <Dropdown
-        className={classNames(cls.avatarDropdown, {}, [className])}
+        //className={classNames(cls.avatarDropdown, {}, [className])}
         items={[
           ...(isAdmin
             ? [

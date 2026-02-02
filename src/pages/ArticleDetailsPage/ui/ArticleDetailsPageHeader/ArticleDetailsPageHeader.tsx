@@ -1,5 +1,4 @@
 import Button from "@/shared/ui/Button/Button";
-import cls from "./ArticleDetailsPageHeader.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
@@ -31,10 +30,10 @@ const ArticleDetailsPageHeader = ({
   }, [article?.id, navigate]);
 
   return (
-    <HStack gap={'8'} justify={"between"} className={classNames(cls.articleDetailsPageHeader, {}, [className])}>
+    <HStack gap={'8'} justify={"between"} className={classNames('', {}, [className])}>
       <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
       {canEdit && (
-        <Button className={cls.editBtn} onClick={onEditArticle}>
+        <Button className={''} onClick={onEditArticle}>
           {t('Редактировать')}
         </Button>
       )}

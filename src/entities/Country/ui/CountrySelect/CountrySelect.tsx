@@ -1,5 +1,5 @@
 
-import cls from "./CountrySelect.module.scss";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
@@ -29,7 +29,7 @@ const CountrySelect = memo(
 
     return (
       <Listbox
-        className={classNames(cls.countrySelect, {}, [className])}
+        className={classNames('', {}, [className])}
         defaultValue={t("Страна")}
         label={t("Страна")}
         items={options}

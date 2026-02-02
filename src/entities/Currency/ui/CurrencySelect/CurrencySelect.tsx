@@ -1,5 +1,4 @@
 
-import cls from "./CurrencySelect.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Currency } from "../../model/types";
 import { useTranslation } from "react-i18next";
@@ -29,7 +28,7 @@ const CurrencySelect = memo(
 
     return (
       <Listbox
-        className={classNames(cls.currencySelect, {}, [className])}
+        className={classNames('', {}, [className])}
         value={value}
         items={options}
         defaultValue={t('Валюта')}

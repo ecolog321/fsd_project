@@ -13,9 +13,9 @@ export enum TextAlign {
   CENTER = 'center'
 }
 export enum TextSize {
-  S = 'sizeS',
-  M = 'sizeM',
-  L = 'sizeL'
+  S = 'size_s',
+  M = 'size_m',
+  L = 'size_l'
 }
 
 interface TextProps {
