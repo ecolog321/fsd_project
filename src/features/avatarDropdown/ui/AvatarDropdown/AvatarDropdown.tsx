@@ -26,7 +26,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
   }
     return (
       <Dropdown
-        //className={classNames(cls.avatarDropdown, {}, [className])}
+        className={classNames('', {}, [className])}
         items={[
           ...(isAdmin
             ? [

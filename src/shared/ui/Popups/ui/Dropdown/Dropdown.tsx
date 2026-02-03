@@ -52,7 +52,7 @@ export function Dropdown(props: DropdownProps) {
             );
           }
           return (
-            <MenuItem as={'button'} style={{width:'100%', border:'none'}} onClick={item.onCLick} key={id}>
+            <MenuItem as={'div'} style={{width:'100%', border:'none'}} onClick={item.onCLick} key={id}>
               {content}
             </MenuItem>
           );

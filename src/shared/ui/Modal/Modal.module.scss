@@ -1,4 +1,4 @@
-/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
 .modal {
   position: fixed;
   top: 0;
@@ -14,10 +14,11 @@
   align-items: center;
 }
 
+
 .content {
   padding: 20px;
   border-radius: 10px;
-  background: var(--bg-color);
+  background:var(--bg-color);
   z-index: var(--modal-z-index);
   transition: 0.3s all;
   transform: scale(0.5);
