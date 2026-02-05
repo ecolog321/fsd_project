@@ -21,6 +21,7 @@ function Modal(props: ModalProps) {
     isOpen,
   });
 
+
   const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,

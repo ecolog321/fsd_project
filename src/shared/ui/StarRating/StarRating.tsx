@@ -19,7 +19,7 @@ export const StarRating = ({
   size = 30,
   selectedStars = 0,
 }: StarRatingProps) => {
-  const [currentStarCount, setCurrentStarCount] = useState(0);
+  const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
   const onClick = (starsCount: number) => () => {
@@ -35,7 +35,7 @@ export const StarRating = ({
       setCurrentStarCount(starsCount);
     }
   };
-  const onLeave = () => () => {
+  const onLeave = () => {
     if (!isSelected) {
       setCurrentStarCount(0);
     }
@@ -46,11 +46,11 @@ export const StarRating = ({
       {stars.map((starNumber) => (
         <Icon
           className={classNames(
-            cls.startIcon,
+            cls.starIcon,
             {
               [cls.selected]: isSelected,
             },
-            [currentStarCount>=starNumber ? cls.hovered : cls.normal],
+            [currentStarCount >= starNumber ? cls.hovered : cls.normal],
           )}
           Svg={StarIcon}
           key={starNumber}

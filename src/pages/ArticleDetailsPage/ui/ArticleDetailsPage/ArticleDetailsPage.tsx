@@ -13,6 +13,7 @@ import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetails
 import VStack from "@/shared/ui/Stack/VStack/VStack";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import ArticleDetailsComments from "../ArticleDetailsComments/ArticleDetailsComments";
+import { ArticleRating } from "@/features/articleRating";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -33,12 +34,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     );
   }
 
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <VStack gap={"16"} max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id}/>
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

@@ -1,5 +1,5 @@
 import Card from "@/shared/ui/Card/Card";
-import cls from "./Rating.module.scss";
+import cls from "./RatingCard.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import VStack from "@/shared/ui/Stack/VStack/VStack";
 import Text from "@/shared/ui/Text/Text";
@@ -12,16 +12,17 @@ import Button from "@/shared/ui/Button/Button";
 import { BrowserView, MobileView } from "react-device-detect";
 import { Drawer } from "@/shared/ui/Drawer/Drawer";
 
-interface RatingProps {
+interface RatingCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
   hasFeedback?: boolean;
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedback?: string) => void;
+  rate?:number;
 }
 
-export const Rating = memo(
+export const RatingCard = memo(
   ({
     className,
     title,
@@ -29,10 +30,12 @@ export const Rating = memo(
     hasFeedback,
     onAccept,
     onCancel,
-  }: RatingProps) => {
+    rate
+  }: RatingCardProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate ? rate : 0);
     const [feedback, setFeedback] = useState("");
+
 
     const onSelectStars = useCallback(
       (selectedStarsCount: number) => {
@@ -60,7 +63,8 @@ export const Rating = memo(
 
     const modalContent = (
       <VStack max gap="32">
-        <Text title={title} />
+        <Text title={starsCount ? 'Спасибо за оценку!': title} />
+        <Text text={feedbackTitle} />
         <Input value={feedback} onChange={setFeedback} placeholder="Ваш отзыв" />
         <HStack max gap="16" justify="end">
           <Button onClick={cancelHandle}>{"Закрыть"}</Button>
@@ -70,10 +74,10 @@ export const Rating = memo(
     );
 
     return (
-      <Card className={classNames(cls.Rating, {}, [className])}>
+      <Card max className={classNames(cls.Rating, {}, [className])}>
         <VStack align="center" gap="8">
           <Text title={title} />
-          <StarRating size={40} onSelect={onSelectStars} />
+          <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
         </VStack>
 
         <BrowserView>
