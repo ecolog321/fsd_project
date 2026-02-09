@@ -79,7 +79,6 @@ export const RatingCard = memo(
           <Text title={title} />
           <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
         </VStack>
-
         <BrowserView>
           <Modal isOpen={isModalOpen} lazy>
             {modalContent}

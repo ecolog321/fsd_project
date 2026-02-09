@@ -49,7 +49,7 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "warn",
       "react/display-name": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
-      "ormina-plugin/path-cheker": "warn",
+      "ormina-plugin/path-cheker": ["warn", { alias: "@" }],
       //"i180ally.so":['warn', true],
       //"i18n-ally.keepFulfilled": ['warn', true],
     },

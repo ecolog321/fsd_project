@@ -25,7 +25,7 @@ export interface AddCommentFormProps {
 }
 
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
-  const {t} =useTranslation('article')
+  const { t } = useTranslation("article");
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
@@ -37,7 +37,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
     (value: string) => {
       dispatch(addCommentFormActions.setText(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onSendHandler = useCallback(() => {
@@ -47,14 +47,18 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack max gap={'8'} className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        max
+        gap={"8"}
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           className={cls.input}
           placeholder="Введите текст комментария"
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+        <Button onClick={onSendHandler}>{t("Отправить")}</Button>
       </HStack>
     </DynamicModuleLoader>
   );
