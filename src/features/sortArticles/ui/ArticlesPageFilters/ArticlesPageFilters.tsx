@@ -21,11 +21,10 @@ import { ArticleSortFeild, SortOrder } from "../../model/types/sortArticles";
 import DynamicModuleLoader, {
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articlesPageActions } from "@/pages/ArticlePage/model/slice/articlesPageSlice";
-import { getArticlesPageView } from "@/pages/ArticlePage/model/selectors/articlesPageSelectors";
-import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList";
+
 import { useDebounce } from "@/shared/lib/hooks/useDebounce";
 import Tabs, { TabItem } from "@/shared/ui/Tabs/Tabs";
+import { articlesPageActions, fetchArticlesList, getArticlesPageView } from "@/pages/ArticlePage";
 
 interface ArticlesPageFiltersProps {
   className?: string;

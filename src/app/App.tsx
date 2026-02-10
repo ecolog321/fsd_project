@@ -7,7 +7,7 @@ import { Sidebar } from "@/widgets/Sidebar";
 import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInitedData, userActions } from "@/entities/User";
-import PageLoader from "@/widgets/PageLoader/ui/PageLoader";
+import { PageLoader } from "@/widgets/PageLoader";
 
 export const App = () => {
   const { theme } = useTheme();

@@ -1,5 +1,4 @@
 import { ArticleList } from "@/entities/Article";
-import { getArticles } from "@/features/sortArticles/model/slice/sortArticlesSlice";
 import {
   getArticlesPageError,
   getArticlesPageInited,
@@ -12,6 +11,7 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import Text from "@/shared/ui/Text/Text";
+import { getArticles } from "@/features/sortArticles";
 
 interface ArticleInfiniteListProps {
   className?: string;
