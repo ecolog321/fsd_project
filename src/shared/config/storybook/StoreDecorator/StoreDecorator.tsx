@@ -1,13 +1,14 @@
-/* eslint-disable ormina-plugin/public-api-imports */
+
 import { Decorator } from "@storybook/react";
 import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { profileReducers } from "@/features/editableProfileCard";
-import { articleDetailsReducers } from "@/entities/Article/model/slice/articleDetailsSlice";
-import { addCommentFormReducers } from "@/features/addCommentForm/model/slice/addCommentFormSlice";
-import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/model/slice";
-import { loginReducer } from "@/features/authByUsername";
+import { articleDetailsReducers } from "@/entities/Article/testing";
+import { addCommentFormReducers } from "@/features/addCommentForm/testing";
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
+import { loginReducer } from "@/features/authByUsername/testing";
+
 
 const defaultReducers: ReducersList = {
   loginForm: loginReducer,

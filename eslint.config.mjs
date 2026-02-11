@@ -50,7 +50,17 @@ export default defineConfig([
       "react/display-name": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
       "ormina-plugin/path-cheker": ["error", { alias: "@" }],
-      "ormina-plugin/public-api-imports": ["error", { alias: "@" }],
+      "ormina-plugin/public-api-imports": [
+        "error",
+        {
+          alias: "@",
+          testFilesPatterns: [
+            "**/*.test.ts",
+            "**/*.test.ts",
+            "**/StoreDecorator.tsx",
+          ],
+        },
+      ],
       //"i180ally.so":['warn', true],
       //"i18n-ally.keepFulfilled": ['warn', true],
     },
