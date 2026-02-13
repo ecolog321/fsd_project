@@ -6,7 +6,7 @@ import Button, { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import SidebarItem from "../SidebarItem/SidebarItem";
 import { useSelector } from "react-redux";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
-import { LangSwitcher } from "@/shared/ui/LangSwitcher";
+import { LangSwitcher } from "@/features/LangSwitcher";
 import VStack from "@/shared/ui/Stack/VStack/VStack";
 
 interface SidebarProps {

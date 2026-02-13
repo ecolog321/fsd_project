@@ -12,4 +12,4 @@ export type {
 
 export {ValidateProfileError}
 
-export { profileReducers, ProfileCard,EditableProfileCard};
+export { ProfileCard,EditableProfileCard};

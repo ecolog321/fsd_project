@@ -1,6 +1,6 @@
-import { ReduxStoreWithManager } from "@/app/providers/StoreProvider";
+import { ReduxStoreWithManager, StateSchemaKey } from "@/app/providers/StoreProvider";
 import { FC, ReactNode, useEffect } from "react";
-import { StateSchemaKey } from "@/app/providers/StoreProvider/config/StateSchema";
+
 import { Reducer } from "@reduxjs/toolkit";
 import { useStore } from "react-redux";
 

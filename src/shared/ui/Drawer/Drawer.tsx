@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useEffect } from "react";
 import cls from "./Drawer.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { useTheme } from "@/app/providers/ThemeProvider";
+import { useTheme } from "@/shared/lib/hooks/useTheme";
 import { Portal } from "@headlessui/react";
 import { Overlay } from "../Overlay/Overlay";
 import {

@@ -50,6 +50,10 @@ export default defineConfig([
       "react/display-name": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
       "ormina-plugin/path-cheker": ["error", { alias: "@" }],
+      "ormina-plugin/layer-imports":['error', {
+        alias:'@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }],
       "ormina-plugin/public-api-imports": [
         "error",
         {

@@ -24,6 +24,7 @@ import DynamicModuleLoader, {
 
 import { useDebounce } from "@/shared/lib/hooks/useDebounce";
 import Tabs, { TabItem } from "@/shared/ui/Tabs/Tabs";
+// eslint-disable-next-line ormina-plugin/layer-imports
 import { articlesPageActions, fetchArticlesList, getArticlesPageView } from "@/pages/ArticlePage";
 
 interface ArticlesPageFiltersProps {
