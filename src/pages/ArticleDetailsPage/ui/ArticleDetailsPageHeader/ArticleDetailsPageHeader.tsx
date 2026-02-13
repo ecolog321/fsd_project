@@ -2,7 +2,7 @@ import Button from "@/shared/ui/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
-import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
+import { RouterPath } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getCanEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "@/entities/Article";

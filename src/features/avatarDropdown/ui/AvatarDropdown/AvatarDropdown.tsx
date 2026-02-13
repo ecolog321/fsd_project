@@ -1,6 +1,6 @@
 import { Dropdown } from "@/shared/ui/Popups";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
+import { RouterPath } from "@/shared/const/router";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";

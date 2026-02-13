@@ -12,7 +12,7 @@ import Button from "@/shared/ui/Button/Button";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
+import { RouterPath } from "@/shared/const/router";
 import AppLink from "@/shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArticleBlockType, ArticleView } from "../../model/consts/const";
