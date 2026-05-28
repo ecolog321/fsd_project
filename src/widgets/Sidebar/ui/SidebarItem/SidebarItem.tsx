@@ -3,9 +3,9 @@ import cls from "./SidebarItem.module.scss";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
-import { getUserAuthData } from "@/entities/User";
 import { SidebarItemType } from "../../model/types/items";
 import Icon from "@/shared/ui/Icon/Icon";
+import { getUserAuthData } from "@/entities/User";
 
 interface SidebarItemProps {
   item: SidebarItemType;
