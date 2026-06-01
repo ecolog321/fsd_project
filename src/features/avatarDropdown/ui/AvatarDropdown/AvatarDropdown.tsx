@@ -4,7 +4,7 @@ import { RouterPath } from "@/shared/const/router";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import Avatar from "@/shared/ui/Avatar/Avatar";
+import Avatar from "@/shared/ui/Avatar";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useCallback } from "react";
 

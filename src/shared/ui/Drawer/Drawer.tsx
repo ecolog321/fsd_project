@@ -3,11 +3,11 @@ import cls from "./Drawer.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTheme } from "@/shared/lib/hooks/useTheme";
 import { Portal } from "@headlessui/react";
-import { Overlay } from "../Overlay/Overlay";
 import {
   AnimationProvider,
   useAnimationLibs,
 } from "@/shared/lib/components/AnimationProvider";
+import Overlay from "../Overlay";
 
 interface DrawerProps {
   className?: string;
@@ -19,7 +19,7 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerContent = ({
+const DrawerContent = ({
   className,
   children,
   isOpen,
@@ -119,3 +119,6 @@ export const Drawer = (props: DrawerProps) => {
     </AnimationProvider>
   );
 };
+
+
+export default Drawer;

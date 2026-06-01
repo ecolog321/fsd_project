@@ -1,7 +1,7 @@
-import Input from "@/shared/ui/Input/Input";
+import Input from "@/shared/ui/Input";
 import cls from "./AddCommentForm.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import Button from "@/shared/ui/Button/Button";
+import Button from "@/shared/ui/Button";
 import { useSelector } from "react-redux";
 import {
   getAddCommentFormError,
@@ -17,7 +17,7 @@ import DynamicModuleLoader, {
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useTranslation } from "react-i18next";
-import HStack from "@/shared/ui/Stack/HStack/HStack";
+import HStack from "@/shared/ui/HStack";
 
 export interface AddCommentFormProps {
   className?: string;

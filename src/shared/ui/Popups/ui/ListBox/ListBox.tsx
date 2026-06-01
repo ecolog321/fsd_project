@@ -3,7 +3,7 @@ import cls from "./Listbox.module.scss";
 import { Fragment, ReactNode } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import Button from "../../../Button/Button";
-import HStack from "../../../Stack/HStack/HStack";
+import HStack from "../../../HStack/HStack";
 import { DropdownDirection } from "@/shared/types/ui";
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popups.module.scss'

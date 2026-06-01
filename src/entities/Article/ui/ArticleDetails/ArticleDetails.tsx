@@ -13,12 +13,12 @@ import {
   getArticleDetailsError,
   getArticleDetailsisLoading,
 } from "../../model/selectors/articleDetails";
-import Text, { TextAlign, TextSize, TextTheme } from "@/shared/ui/Text/Text";
-import Skeleton from "@/shared/ui/Skeleton/Skeleton";
-import Avatar from "@/shared/ui/Avatar/Avatar";
+import Text from "@/shared/ui/Text";
+import Skeleton from "@/shared/ui/Skeleton";
+import Avatar from "@/shared/ui/Avatar";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import CalendarIcon from "@/shared/assets/icons/calendar.svg";
-import Icon from "@/shared/ui/Icon/Icon";
+import Icon from "@/shared/ui/Icon";
 import {
   ArticleBlock
 } from "../../model/types/article";
@@ -26,9 +26,10 @@ import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeB
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
-import HStack from "@/shared/ui/Stack/HStack/HStack";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
+import HStack from "@/shared/ui/HStack";
+import VStack from "@/shared/ui/VStack";
 import { ArticleBlockType } from "../../model/consts/const";
+import { TextAlign, TextSize, TextTheme } from "@/shared/ui/Text/Text";
 
 interface ArticleDetailsProps {
   className?: string;

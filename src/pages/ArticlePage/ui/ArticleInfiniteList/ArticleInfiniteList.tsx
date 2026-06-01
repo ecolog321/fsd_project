@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import Text from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import { getArticles } from "@/features/sortArticles";
 
 interface ArticleInfiniteListProps {

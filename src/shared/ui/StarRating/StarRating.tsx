@@ -13,7 +13,7 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-export const StarRating = ({
+const StarRating = ({
   className,
   onSelect,
   size = 30,
@@ -64,3 +64,4 @@ export const StarRating = ({
     </div>
   );
 };
+export default StarRating;

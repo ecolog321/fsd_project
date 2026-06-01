@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Page } from "@/widgets/Page";
 import { useParams } from "react-router-dom";
-import Text from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import { EditableProfileCard } from "@/features/editableProfileCard";
 
 interface ProfilePageProps {

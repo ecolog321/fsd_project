@@ -6,7 +6,7 @@ interface OverlayProps {
   onClick?: () => void;
 }
 
-export const Overlay = ({ className, onClick }: OverlayProps) => {
+const Overlay = ({ className, onClick }: OverlayProps) => {
   return (
     <div
       onClick={onClick}
@@ -14,3 +14,5 @@ export const Overlay = ({ className, onClick }: OverlayProps) => {
     ></div>
   );
 };
+
+export default Overlay;

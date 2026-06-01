@@ -1,8 +1,7 @@
-import Text from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { CommentList } from "@/entities/Comment";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
 import { useSelector } from "react-redux";
 import { Suspense, useCallback } from "react";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentSlice";
@@ -11,7 +10,8 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId";
-import Loader from "@/shared/ui/Loader/Loader";
+import Loader from "@/shared/ui/Loader";
+import VStack from "@/shared/ui/VStack";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
