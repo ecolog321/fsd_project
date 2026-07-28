@@ -4,13 +4,9 @@ const config: StorybookConfig = {
     "stories": [
         "../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
     ],
-    "addons": [
-        "@storybook/addon-webpack5-compiler-swc",
-        "@storybook/addon-docs",
-        '@storybook/addon-essentials'
-    ],
+    "addons": ["@storybook/addon-webpack5-compiler-swc", "@storybook/addon-docs"],
     "framework": {
-        "name": "@storybook/react-webpack5",
+        "name": "@storybook/react-vite",
         "options": {}
     }
 };

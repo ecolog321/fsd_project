@@ -1,11 +1,10 @@
 import type { Preview } from "@storybook/react-webpack5";
-import "../../src/app/styles/index.scss";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { TranslationDecorator } from "../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator";
 import { SuspenceDecorator } from "../../src/shared/config/storybook/SuspenceDecorator/SuspenceDecorator";
-import { Theme } from "../../src/app/providers/ThemeProvider";
+import { Theme } from "../../src/shared/const/theme";
 
 const customViewports = {
   iphoneSE: {
@@ -47,8 +46,7 @@ const preview: Preview = {
       },
     },
     viewport: {
-      viewports: customViewports,
-      defaultViewport: "desktop",
+      options: customViewports
     },
 
     // Настройки для Chromatic
@@ -60,6 +58,7 @@ const preview: Preview = {
     store: {},
     theme: Theme.LIGHT,
   },
+
   decorators: [
     StyleDecorator,
     ThemeDecorator,
@@ -67,5 +66,12 @@ const preview: Preview = {
     TranslationDecorator,
     SuspenceDecorator
   ],
+
+  initialGlobals: {
+    viewport: {
+      value: "desktop",
+      isRotated: false
+    }
+  }
 };
 export default preview;
