@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 import Text from "@/shared/ui/Text";
 import AppLink from "@/shared/ui/AppLink";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleCreate } from "@/shared/const/router";
 import { NotificationButton } from "@/features/notificationButton";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import HStack from "@/shared/ui/HStack";
@@ -38,7 +38,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
         <Text className={cls.logo} title="Ormina" theme={TextTheme.PRIMARY} />
         <HStack justify={"between"} max>
           <AppLink
-            to={RouterPath.article_create}
+            to={getRouteArticleCreate()}
             theme={AppLinkTheme.PRIMARY}
             className={cls.createBtn}
           >

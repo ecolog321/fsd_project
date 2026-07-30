@@ -12,7 +12,7 @@ import Button from "@/shared/ui/Button";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 import AppLink from "@/shared/ui/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArticleBlockType, ArticleView } from "../../model/consts/const";
@@ -33,7 +33,7 @@ const ArticleListItem = ({
   const {t}=useTranslation('article')
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
-    navigate(RouterPath.article_details + article.id);
+    navigate(getRouteArticleDetails(article.id));
   }, [article.id, navigate]);
 
   if (view === ArticleView.LIST) {
@@ -62,7 +62,7 @@ const ArticleListItem = ({
           <div className={cls.footer}>
             <AppLink
               target={target}
-              to={RouterPath.article_details + article.id}
+              to={getRouteArticleDetails(article.id)}
             >
               <Button onClick={onOpenArticle}>{t('Читать далее')}</Button>
             </AppLink>
@@ -77,7 +77,7 @@ const ArticleListItem = ({
     <AppLink
       target={target}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
-      to={RouterPath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
     >
       <Card className={cls.card}>
         <div className={cls.imgWrapper}>
