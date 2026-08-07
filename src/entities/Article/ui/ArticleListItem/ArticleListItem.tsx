@@ -1,7 +1,5 @@
 import Text from "@/shared/ui/Text";
-import {
-  Article
-} from "../../model/types/article";
+import { Article } from "../../model/types/article";
 import cls from "./ArticleListItem.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import Icon from "@/shared/ui/Icon";
@@ -16,6 +14,8 @@ import { getRouteArticleDetails } from "@/shared/const/router";
 import AppLink from "@/shared/ui/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArticleBlockType, ArticleView } from "../../model/consts/const";
+import { AppImage } from "@/shared/ui/AppImage";
+import Skeleton from "@/shared/ui/Skeleton";
 
 interface ArticleListItemProps {
   className?: string;
@@ -30,7 +30,7 @@ const ArticleListItem = ({
   article,
   target,
 }: ArticleListItemProps) => {
-  const {t}=useTranslation('article')
+  const { t } = useTranslation("article");
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
     navigate(getRouteArticleDetails(article.id));
@@ -38,7 +38,7 @@ const ArticleListItem = ({
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
+      (block) => block.type === ArticleBlockType.TEXT,
     );
     return (
       <div
@@ -52,7 +52,12 @@ const ArticleListItem = ({
           </div>
           <Text title={article.title} className={cls.title} />
           <Text text={article.type.join(", ")} className={cls.types} />
-          <img src={article.img} className={cls.pic} alt={article.title} />
+
+          <AppImage
+            fallback={<Skeleton width={"100%"} height={250} />}
+            src={article.img}
+            className={cls.pic}
+          />
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -60,11 +65,8 @@ const ArticleListItem = ({
             />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRouteArticleDetails(article.id)}
-            >
-              <Button onClick={onOpenArticle}>{t('Читать далее')}</Button>
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
+              <Button onClick={onOpenArticle}>{t("Читать далее")}</Button>
             </AppLink>
             <Text text={String(article.views)} className={cls.views} />
             <Icon Svg={EyeIcon} />
@@ -81,7 +83,13 @@ const ArticleListItem = ({
     >
       <Card className={cls.card}>
         <div className={cls.imgWrapper}>
-          <img alt={article.title} src={article.img} className={cls.pic} />
+          <AppImage
+            fallback={<Skeleton width={"100%"} height={50} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.pic}
+          />
+
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
