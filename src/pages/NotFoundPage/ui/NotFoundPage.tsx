@@ -11,7 +11,7 @@ interface NotFoundPagePrps {
 const NotFoundPage: FC<NotFoundPagePrps> = ({ className }) => {
   const {t}=useTranslation('common')
   return (
-    <Page className={classNames(cls.notFoundPage, {}, [className])}>
+    <Page data-testid="NotFoundPage" className={classNames(cls.notFoundPage, {}, [className])}>
       {t('Страница не найдена')}
     </Page>
   );

@@ -1,5 +1,4 @@
 import { memo, useMemo, useState } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Sidebar.module.scss";
 import { ThemeSlider } from "@/features/themeSlider";
 import Button from "@/shared/ui/Button";
@@ -9,6 +8,7 @@ import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { LangSwitcher } from "@/features/LangSwitcher";
 import { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import VStack from "@/shared/ui/VStack";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface SidebarProps {
   className?: string;

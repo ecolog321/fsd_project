@@ -15,7 +15,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return <Text text={`Профиль не найден`} />;
   }
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
       <EditableProfileCard id={id} />
     </Page>
   );
