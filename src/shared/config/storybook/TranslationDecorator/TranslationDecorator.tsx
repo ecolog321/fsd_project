@@ -1,7 +1,7 @@
 import { Decorator } from "@storybook/react-webpack5";
 import "../../../../app/styles/index.scss";
 import { I18nextProvider } from "react-i18next";
-import i18n from "../../i18n/i18n";
+import i18n from "../../i18n/i18nForTest";
 import { Suspense } from "react";
 
 export const TranslationDecorator: Decorator = (Story) => {

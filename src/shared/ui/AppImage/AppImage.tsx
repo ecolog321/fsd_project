@@ -1,5 +1,4 @@
 import { ImgHTMLAttributes, ReactElement, useLayoutEffect, useState } from "react";
-import cls from "./AppImage.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -42,7 +41,7 @@ export const AppImage = (props: AppImageProps) => {
   }
   return (
     <img
-      className={classNames(cls.AppImage, {}, [className])}
+      className={classNames('', {}, [className])}
       src={src}
       alt={alt}
       {...otherProps}
