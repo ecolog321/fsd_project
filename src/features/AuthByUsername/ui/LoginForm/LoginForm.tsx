@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import cls from "./LoginForm.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
-import Input from "@/shared/ui/Input/Input";
+import Button from "@/shared/ui/Button";
+import Input from "@/shared/ui/Input";
 import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import Text, { TextTheme } from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginLoading } from "../../model/selectors/getLoginLoading/getLoginLoading";
@@ -16,6 +16,8 @@ import DynamicMudleLoader, {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+import { TextTheme } from "@/shared/ui/Text/Text";
+import { ButtonTheme } from "@/shared/ui/Button/Button";
 
 export interface LoginFormProps {
   className?: string;

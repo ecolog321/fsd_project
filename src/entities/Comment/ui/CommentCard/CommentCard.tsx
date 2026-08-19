@@ -1,12 +1,12 @@
-import Avatar from "@/shared/ui/Avatar/Avatar";
+import Avatar from "@/shared/ui/Avatar";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import Text from "@/shared/ui/Text/Text";
-import Skeleton from "@/shared/ui/Skeleton/Skeleton";
-import AppLink from "@/shared/ui/AppLink/AppLink";
-import { RouterPath } from "@/shared/const/router";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
+import Text from "@/shared/ui/Text";
+import Skeleton from "@/shared/ui/Skeleton";
+import AppLink from "@/shared/ui/AppLink";
+import { getRouteProfile } from "@/shared/const/router";
+import VStack from "@/shared/ui/VStack";
 
 interface CommentCardProps {
   className?: string;
@@ -17,7 +17,11 @@ interface CommentCardProps {
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className, cls.loading])}>
+      <VStack
+        max
+        gap={"8"}
+        className={classNames(cls.commentCard, {}, [className, cls.loading])}
+      >
         <div className={cls.header}>
           <Skeleton
             width={30}
@@ -37,8 +41,12 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   }
 
   return (
-    <VStack max gap={'8'} className={classNames(cls.commentCard, {}, [className])}>
-      <AppLink to={`${RouterPath.profile}${comment.user.id}`}>
+    <VStack
+      max
+      gap={"8"}
+      className={classNames(cls.commentCard, {}, [className])}
+    >
+      <AppLink to={getRouteProfile(comment.user.id)}>
         <div className={cls.header}>
           {comment.user.avatar ? (
             <Avatar src={comment.user.avatar} size={40} />

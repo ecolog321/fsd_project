@@ -1,7 +1,7 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
-import Avatar from "@/shared/assets/tests/leo.jpeg";
+//import Avatar from "@/shared/assets/tests/leo.jpeg";
 import { getProfileData } from "./getProfileData";
 
 describe("getProfileData.test", () => {
@@ -14,7 +14,6 @@ describe("getProfileData.test", () => {
       firstname: "D",
       lastname: "Arkhipov",
       city: "Ang",
-      avatar: Avatar,
     };
     const state: DeepPartial<StateSchema> = {
       profile: {

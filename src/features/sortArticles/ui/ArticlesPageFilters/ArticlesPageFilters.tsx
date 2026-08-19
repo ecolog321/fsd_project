@@ -4,8 +4,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useCallback, useMemo } from "react";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
-import Card from "@/shared/ui/Card/Card";
-import Input from "@/shared/ui/Input/Input";
+import Card from "@/shared/ui/Card";
+import Input from "@/shared/ui/Input";
 import ArticleSortSelector from "../ArticleSortSelector/ArticleSortSelector";
 import {
   getOrderArticles,
@@ -23,9 +23,10 @@ import DynamicModuleLoader, {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 import { useDebounce } from "@/shared/lib/hooks/useDebounce";
-import Tabs, { TabItem } from "@/shared/ui/Tabs/Tabs";
+import Tabs from "@/shared/ui/Tabs";
 // eslint-disable-next-line ormina-plugin/layer-imports
 import { articlesPageActions, fetchArticlesList, getArticlesPageView } from "@/pages/ArticlePage";
+import { TabItem } from "@/shared/ui/Tabs/Tabs";
 
 interface ArticlesPageFiltersProps {
   className?: string;

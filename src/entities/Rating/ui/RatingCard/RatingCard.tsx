@@ -1,16 +1,16 @@
-import Card from "@/shared/ui/Card/Card";
+import Card from "@/shared/ui/Card";
 import cls from "./RatingCard.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
-import Text from "@/shared/ui/Text/Text";
-import { StarRating } from "@/shared/ui/StarRating/StarRating";
+import VStack from "@/shared/ui/VStack";
+import Text from "@/shared/ui/Text";
 import { memo, useCallback, useState } from "react";
-import Modal from "@/shared/ui/Modal/Modal";
-import Input from "@/shared/ui/Input/Input";
-import HStack from "@/shared/ui/Stack/HStack/HStack";
-import Button from "@/shared/ui/Button/Button";
+import Modal from "@/shared/ui/Modal";
+import Input from "@/shared/ui/Input";
+import HStack from "@/shared/ui/HStack";
+import Button from "@/shared/ui/Button";
 import { BrowserView, MobileView } from "react-device-detect";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
+import StarRating from "@/shared/ui/StarRating";
+import Drawer from "@/shared/ui/Drawer";
 
 interface RatingCardProps {
   className?: string;

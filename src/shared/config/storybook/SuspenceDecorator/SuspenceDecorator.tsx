@@ -1,10 +1,8 @@
-import { Decorator } from "@storybook/react-webpack5";
+import { Decorator } from "@storybook/react";
 import { Suspense } from "react";
 
-export const SuspenceDecorator: Decorator = (Story) => {
-  return (
-    <Suspense>
-      <Story />
-    </Suspense>
-  );
-};
+export const SuspenceDecorator: Decorator = (Story) => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Story />
+  </Suspense>
+);

@@ -1,5 +1,3 @@
-
-
 import { Decorator } from "@storybook/react";
 import "../../../../app/styles/index.scss";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
@@ -11,7 +9,6 @@ import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
 import { loginReducer } from "@/features/authByUsername/testing";
 import { profileReducers } from "@/features/editableProfileCard/testing";
 
-
 const defaultReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducers,
@@ -22,7 +19,7 @@ const defaultReducers: ReducersList = {
 
 export const StoreDecorator: Decorator = (Story, context) => {
   const { initialState, asyncReducers } = context.parameters?.store || {};
-  
+
   return (
     <StoreProvider
       initialState={initialState as StateSchema}

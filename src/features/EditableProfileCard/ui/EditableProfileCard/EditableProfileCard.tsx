@@ -12,14 +12,14 @@ import { fetchProfileData } from "../../model/services/fetchUserProfileData/fetc
 import { profileActions, profileReducers } from "../../model/slice/profileSlice";
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
 import ProfilePageHeader from "../../ui/ProfilePageHeader/ProfilePageHeader";
-import Text from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import { ValidateProfileError } from "../../model/consts/const";
 import DynamicModuleLoader, {
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import VStack from "@/shared/ui/VStack";
 
 export interface IEditableProfileCardProps {
   className?: string;

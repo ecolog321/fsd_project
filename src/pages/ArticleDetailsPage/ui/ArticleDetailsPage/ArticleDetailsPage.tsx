@@ -3,17 +3,18 @@ import cls from "./ArticleDetailsPage.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleDetails } from "@/entities/Article";
 import { useParams } from "react-router-dom";
-import Text, { TextTheme } from "@/shared/ui/Text/Text";
+import Text from "@/shared/ui/Text";
 import DynamicModuleLoader, {
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Page } from "@/widgets/Page";
 import { articleDetailsPageReducer } from "../../model/slice";
 import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import VStack from "@/shared/ui/Stack/VStack/VStack";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import ArticleDetailsComments from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "@/features/articleRating";
+import { TextTheme } from "@/shared/ui/Text/Text";
+import VStack from "@/shared/ui/VStack";
 
 interface ArticleDetailsPageProps {
   className?: string;

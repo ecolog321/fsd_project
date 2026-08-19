@@ -47,6 +47,7 @@ const config: Config = {
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg': '<rootDir>/config/jest/jestEmptyComponents.tsx',
+         '^@/(.*)$': '<rootDir>/src/$1',
     },
     testMatch: [
         "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",

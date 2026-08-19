@@ -1,10 +1,10 @@
 import { Dropdown } from "@/shared/ui/Popups";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteProfile, RouterPath } from "@/shared/const/router";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import Avatar from "@/shared/ui/Avatar/Avatar";
+import Avatar from "@/shared/ui/Avatar";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useCallback } from "react";
 
@@ -38,7 +38,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
             : []),
           {
             content: t("Профиль"),
-            href: RouterPath.profile + authData.id,
+            href: getRouteProfile(authData.id),
           },
           {
             content: t("Выйти"),

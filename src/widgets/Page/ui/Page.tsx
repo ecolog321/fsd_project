@@ -10,14 +10,17 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle";
 import { scrollSaveActions } from "../model/slices/scrollSaveSlice";
+import { TestProps } from "@/shared/types/tests";
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
+
 }
 
-const Page = ({ className, children, onScrollEnd }: PageProps) => {
+const Page = (props: PageProps) => {
+  const {className, children, onScrollEnd} =props;
   const wrapperRef = useRef<HTMLDivElement>(null!);
   const triggerRef = useRef<HTMLDivElement>(null!);
   const dispatch = useAppDispatch();
@@ -50,6 +53,7 @@ useInitialEffect(()=>{
       ref={wrapperRef}
       className={classNames(cls.pageWrapper, {}, [className])}
       onScroll={onScroll}
+      data-testid={props["data-testid"] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
