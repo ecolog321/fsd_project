@@ -1,4 +1,4 @@
-import { Popover } from "@/shared/ui/Popups";
+
 import cls from "./NotificationButton.module.scss";
 import Button from "@/shared/ui/Button";
 import Icon from "@/shared/ui/Icon";
@@ -6,8 +6,9 @@ import { NotificationsList } from "@/entities/Notifications";
 import NoticeImg from "@/shared/assets/icons/notice.svg";
 import { useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
-import { ButtonTheme } from "@/shared/ui/Button/Button";
 import Drawer from "@/shared/ui/Drawer";
+import { ButtonTheme } from "@/shared/ui/Button/Button";
+import { Popover } from "@/shared/ui/Popups/ui";
 
 interface NotificationButtonProps {
   className?: string;
