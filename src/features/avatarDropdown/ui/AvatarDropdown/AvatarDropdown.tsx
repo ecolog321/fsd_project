@@ -1,4 +1,4 @@
-import { Dropdown } from "@/shared/ui/Popups";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { getRouteProfile, RouterPath } from "@/shared/const/router";
 import { getUserAuthData, isUserAdmin, userActions } from "@/entities/User";
@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import Avatar from "@/shared/ui/Avatar";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useCallback } from "react";
+import { Dropdown } from "@/shared/ui/Popups/ui";
 
 interface AvatarDropdownProps {
   className?: string;
